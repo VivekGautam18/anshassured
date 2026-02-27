@@ -5,41 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assured Play Surfaces | Premium Infrastructure & Safety Solutions</title>
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        /* ============================================
+           RESPONSIVE CSS FOR ASSURED PLAY SURFACES
+           Mobile-First Responsive Enhancements
+           ============================================ */
+
+        /* Base Styles - Apply globally */
+        * {
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #ffffff;
+            overflow-x: hidden;
         }
 
+        /* Hero Background Mesh */
         .hero-mesh {
-            background-color: #0f172a;
-            background-image: radial-gradient(at 0% 0%, hsla(217, 100%, 13%, 1) 0, transparent 50%),
-                radial-gradient(at 50% 0%, hsla(215, 96%, 10%, 1) 0, transparent 50%),
-                radial-gradient(at 100% 0%, hsla(220, 100%, 20%, 1) 0, transparent 50%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
         }
 
-        .service-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden;
+        /* Estimator Badge Background */
+        .estimate-badge {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
         }
 
-        .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 40px 80px -15px rgba(15, 23, 42, 0.15);
-        }
-
-        .service-card:hover img {
-            transform: scale(1.08);
-        }
-
-        .marquee-container {
-            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-        }
-
+        /* Marquee Animation */
         @keyframes marquee {
             0% {
                 transform: translateX(0);
@@ -52,25 +50,390 @@
 
         .animate-marquee {
             display: flex;
-            width: max-content;
-            animation: marquee 40s linear infinite;
+            width: 200%;
+            animation: marquee 30s linear infinite;
         }
 
-        .estimate-badge {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        .marquee-container:hover .animate-marquee {
+            animation-play-state: paused;
         }
 
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
+        /* ============================================
+           MOBILE STYLES (320px - 767px)
+           ============================================ */
+
+        @media (max-width: 767px) {
+
+            /* Hero Section Typography */
+            .hero-mesh h1 {
+                font-size: 2.5rem !important;
+                /* ~40px instead of 6xl/8xl */
+                line-height: 1.1 !important;
+            }
+
+            /* Hero Section Padding */
+            .hero-mesh {
+                padding-top: 5rem !important;
+                padding-bottom: 3rem !important;
+                min-height: auto !important;
+            }
+
+            /* Hero Stats Grid - Stack vertically on very small screens */
+            .hero-mesh .grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 1rem !important;
+            }
+
+            .hero-mesh .grid-cols-3>div p:first-child {
+                font-size: 1.5rem !important;
+                /* Smaller stats numbers */
+            }
+
+            .hero-mesh .grid-cols-3>div p:last-child {
+                font-size: 0.65rem !important;
+            }
+
+            /* Button Adjustments */
+            .hero-mesh button {
+                padding: 1rem 1.5rem !important;
+                font-size: 0.875rem !important;
+                border-radius: 1rem !important;
+            }
+
+            /* Section Padding Reduction */
+            section {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+            }
+
+            /* Heading Adjustments */
+            h2 {
+                font-size: 2rem !important;
+                /* ~32px instead of 5xl/6xl */
+                line-height: 1.2 !important;
+            }
+
+            h3 {
+                font-size: 1.75rem !important;
+                /* ~28px */
+                line-height: 1.2 !important;
+            }
+
+            /* Client Marquee */
+            .animate-marquee span {
+                font-size: 1.5rem !important;
+            }
+
+            /* Services Grid - Stack better on mobile */
+            #services .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            .service-card {
+                border-radius: 1.5rem !important;
+            }
+
+            /* Why Choose Us Grid */
+            #why-choose-us .grid.md\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Stats Grid in Why Choose Us */
+            #why-choose-us .grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Contact Section Grid */
+            #contact .lg\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
+            /* Contact Form - Critical Fix */
+            #contact .grid.grid-cols-1.md\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+                /* Stack all inputs vertically */
+                gap: 1rem !important;
+            }
+
+            /* Contact Info Cards */
+            #contact .flex.items-center {
+                padding: 1.25rem !important;
+                border-radius: 1.5rem !important;
+            }
+
+            /* Form Container */
+            #contact form {
+                padding: 2rem !important;
+                border-radius: 2rem !important;
+            }
+
+            /* Estimator Popup */
+            #estimator-popup .max-w-xl {
+                max-width: 95% !important;
+                margin: 0 auto !important;
+            }
+
+            #estimator-popup .p-10 {
+                padding: 1.5rem !important;
+            }
+
+            /* Icon Sizes */
+            .w-16.h-16 {
+                width: 3rem !important;
+                height: 3rem !important;
+            }
+
+            .w-14.h-14 {
+                width: 3rem !important;
+                height: 3rem !important;
+            }
+
+            /* Max Width Containers */
+            .max-w-7xl {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+
+            /* Text Sizing */
+            .text-lg {
+                font-size: 1rem !important;
+            }
+
+            .text-xl {
+                font-size: 1.125rem !important;
+            }
+
+            /* Rounded Corners Adjustment */
+            .rounded-\[2\.5rem\],
+            .rounded-\[2rem\],
+            .rounded-\[3rem\],
+            .rounded-\[3\.5rem\] {
+                border-radius: 1.5rem !important;
+            }
         }
 
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f5f9;
+        /* ============================================
+           TABLET STYLES (768px - 1023px)
+           ============================================ */
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+
+            /* Hero Section */
+            .hero-mesh h1 {
+                font-size: 3.5rem !important;
+                /* ~56px */
+                line-height: 1.1 !important;
+            }
+
+            /* Section Padding */
+            section {
+                padding-top: 5rem !important;
+                padding-bottom: 5rem !important;
+            }
+
+            /* Headings */
+            h2 {
+                font-size: 2.5rem !important;
+                /* ~40px */
+            }
+
+            h3 {
+                font-size: 2rem !important;
+                /* ~32px */
+            }
+
+            /* Services Grid - 2 columns on tablet */
+            #services .grid.md\:grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            /* Contact Form - 2 columns on tablet */
+            #contact .grid.md\:grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            #contact .grid.md\:grid-cols-3>div:last-child {
+                grid-column: span 2 !important;
+            }
         }
 
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 10px;
+        /* ============================================
+           SMALL MOBILE (320px - 480px)
+           ============================================ */
+
+        @media (max-width: 480px) {
+
+            /* Extra small screens adjustments */
+            .hero-mesh h1 {
+                font-size: 2rem !important;
+                /* ~32px */
+            }
+
+            .hero-mesh p {
+                font-size: 0.875rem !important;
+            }
+
+            /* Button Full Width on Very Small Screens */
+            .hero-mesh .flex.flex-wrap {
+                flex-direction: column !important;
+                width: 100% !important;
+            }
+
+            .hero-mesh button {
+                width: 100% !important;
+                justify-content: center !important;
+            }
+
+            /* Stats - 2 columns on very small screens */
+            .hero-mesh .grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .hero-mesh .grid-cols-3>div:last-child {
+                grid-column: span 2 !important;
+            }
+
+            /* Marquee Text Size */
+            .animate-marquee span {
+                font-size: 1.25rem !important;
+            }
+
+            /* Contact Phone Numbers */
+            #contact .font-extrabold.text-xl {
+                font-size: 1rem !important;
+                line-height: 1.5 !important;
+            }
+
+            /* Estimator Result */
+            #pop-result {
+                font-size: 2.5rem !important;
+            }
+        }
+
+        /* ============================================
+           LANDSCAPE MOBILE (Mobile in landscape mode)
+           ============================================ */
+
+        @media (max-height: 600px) and (orientation: landscape) {
+
+            .hero-mesh {
+                min-height: auto !important;
+                padding-top: 3rem !important;
+                padding-bottom: 2rem !important;
+            }
+
+            section {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+
+            .hero-mesh h1 {
+                font-size: 2.25rem !important;
+            }
+        }
+
+        /* ============================================
+           UTILITY FIXES
+           ============================================ */
+
+        /* Ensure images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Prevent horizontal scrolling */
+        .overflow-x-hidden {
+            overflow-x: hidden !important;
+        }
+
+        /* Ensure buttons don't overflow */
+        button {
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+
+        /* Input fields responsive */
+        input,
+        select,
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            font-size: 16px !important;
+            /* Prevents zoom on iOS */
+        }
+
+        /* Fix for popup overlay on mobile */
+        @media (max-width: 767px) {
+            #estimator-popup {
+                padding: 1rem !important;
+            }
+
+            #estimator-popup>div {
+                border-radius: 1.5rem !important;
+            }
+        }
+
+        /* ============================================
+           PRINT STYLES (Bonus)
+           ============================================ */
+
+        @media print {
+
+            .hero-mesh,
+            #estimator-popup {
+                display: none;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* ============================================
+           ACCESSIBILITY ENHANCEMENTS
+           ============================================ */
+
+        /* Focus states for better keyboard navigation */
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+
+        /* Touch target sizing for mobile */
+        @media (max-width: 767px) {
+
+            a,
+            button,
+            input,
+            select {
+                min-height: 44px;
+                /* iOS recommended touch target */
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
@@ -293,7 +656,7 @@
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=800"
                             class="w-full h-full object-cover opacity-80" alt="Cricket Turf">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
                         </div>
                     </div>
                     <div class="p-6 flex-1">
@@ -310,7 +673,7 @@
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&q=80&w=800"
                             class="w-full h-full object-cover opacity-80" alt="Multi Sports Turf">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
                         </div>
                     </div>
                     <div class="p-6 flex-1">
@@ -327,7 +690,7 @@
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://t3.ftcdn.net/jpg/04/22/84/12/360_F_422841241_OR69MNhNG3Sxl6pmrKwuoBZPaZpZLt1a.jpg"
                             class="w-full h-full object-cover opacity-80" alt="Volleyball Court">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
                         </div>
                     </div>
                     <div class="p-6 flex-1">
@@ -344,7 +707,7 @@
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&q=80&w=800"
                             class="w-full h-full object-cover opacity-80" alt="Badminton Court">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
                         </div>
                     </div>
                     <div class="p-6 flex-1">
@@ -361,7 +724,7 @@
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1692288720754-743fbd1f2155?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRlbm5pcyUyMGNvdXJ0JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D"
                             class="w-full h-full object-cover opacity-80" alt="Tennis Court">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
                         </div>
                     </div>
                     <div class="p-6 flex-1">
@@ -378,7 +741,7 @@
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://t3.ftcdn.net/jpg/03/85/14/30/360_F_385143079_GkXacgm3YCbKi3p7klrYG2blkW8JT2iZ.jpg"
                             class="w-full h-full object-cover opacity-80" alt="Basketball Court">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
                         </div>
                     </div>
                     <div class="p-6 flex-1">
@@ -395,7 +758,7 @@
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://m.media-amazon.com/images/I/51kPDCo9doL._AC_UF894,1000_QL80_.jpg"
                             class="w-full h-full object-cover" alt="Mosquito Mesh">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
                         </div>
                     </div>
                     <div class="p-6 flex-1">
@@ -411,7 +774,7 @@
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://m.media-amazon.com/images/I/61uOUnQIjXL._AC_UF894,1000_QL80_.jpg"
                             class="w-full h-full object-cover opacity-80" alt="Smart Hanger">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
                         </div>
                     </div>
                     <div class="p-6 flex-1">
@@ -427,7 +790,7 @@
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&q=80&w=800"
                             class="w-full h-full object-cover opacity-80" alt="Project Consultancy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
                         </div>
                     </div>
                     <div class="p-6 flex-1">
