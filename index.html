@@ -9,7 +9,28 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        html {
+            /* Prevents the navbar from covering section headings when clicking links */
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
 
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            width: 100%;
+        }
+
+        /* Fix: Added padding to the hero section to account for the fixed navbar height */
+        #hero {
+            padding-top: 200px;
+        }
+
+        @media (min-width: 1024px) {
+            #hero {
+                padding-top: 100px;
+            }
+        }
         html,
         body {
             max-width: 100%;
@@ -915,3 +936,4 @@
 </body>
 
 </html>
+
