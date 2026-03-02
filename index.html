@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
         html {
             /* Prevents the navbar from covering section headings when clicking links */
             scroll-behavior: smooth;
@@ -24,6 +25,7 @@
         /* Fix: Added padding to the hero section to account for the fixed navbar height */
         #hero {
             padding-top: 200px;
+
         }
 
         @media (min-width: 1024px) {
@@ -31,6 +33,7 @@
                 padding-top: 100px;
             }
         }
+
         html,
         body {
             max-width: 100%;
@@ -61,8 +64,13 @@
 
         /* Fixed Marquee Animation */
         @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         .animate-marquee {
@@ -127,7 +135,8 @@
                         class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Home</a>
                     <a href="#services"
                         class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Services</a>
-
+                    <a href="project.html"
+                        class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Projects</a>
                     <a href="#estimate"
                         class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Calculator</a>
                     <a href="#contact"
@@ -149,6 +158,8 @@
                     class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Home</a>
                 <a href="#services"
                     class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Services</a>
+                <a href="project.html"
+                    class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Projects</a>
                 <a href="#estimate"
                     class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Calculator</a>
                 <a href="#contact"
@@ -167,7 +178,6 @@
                 class="absolute bottom-1/4 -right-20 w-64 lg:w-96 h-64 lg:h-96 bg-indigo-500 rounded-full mix-blend-screen filter blur-[80px] lg:blur-[120px]">
             </div>
         </div>
-
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div class="space-y-6 lg:space-y-8 text-center lg:text-left">
@@ -183,14 +193,17 @@
                     </div>
 
                     <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight">
-                        Built for <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">Performance.</span>
-                        Engineered for Safety.
+                        Building World Class Sports <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">
+                            Infrastructure,</span>
+                        with Assured Quality.
                     </h1>
 
                     <p class="text-lg lg:text-xl text-slate-400 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
-                        From FIFA-standard sports arenas to high-tensile invisible safety grills. We deliver
-                        industrial-grade excellence to India's most iconic enterprises.
+                        Your Dream Turf, One Day Away.<br>
+                        Tired of staring at dirt patches? Our team specializes in fast,
+                        stress-free turf installation that turns your backyard into the neighborhood envy. Simple,
+                        beautiful, and built to last
                     </p>
 
                     <div
@@ -299,7 +312,7 @@
                 <span class="text-blue-600 font-black uppercase tracking-[0.3em] text-[11px] mb-4 block">The i2
                     Advantage</span>
                 <h2 class="text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-none mb-6">
-                    Why Industry Leaders <br>Trust i2SERVICES.
+                    Why Industry Leaders <br>Assured Play Surfaces.
                 </h2>
                 <p class="text-slate-500 font-medium leading-relaxed">
                     We combine precision engineering with premium materials to deliver safety and infrastructure
@@ -314,10 +327,10 @@
                         class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
                         <i data-lucide="microscope" class="w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">Engineering Precision</h4>
+                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">CC GRASS & BALLIN TURF</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        Every project is backed by rigorous technical assessment and site-specific blueprints to ensure
-                        maximum durability.
+                        We use world-class CC Grass and Ballin Turf surfaces, ensuring professional-grade playability
+                        and unmatched durability for every project.
                     </p>
                 </div>
 
@@ -327,10 +340,10 @@
                         class="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform">
                         <i data-lucide="shield-check" class="w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">Certified Materials</h4>
+                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">APOLLO & TATA LIGHTS</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        From Marine-grade 316 Stainless Steel to FIFA-standard turf fibers, we only use ISO-certified
-                        industrial components.
+                        Our infrastructure is powered by branded Apollo and Tata lighting systems, providing superior
+                        visibility and energy efficiency.
                     </p>
                 </div>
 
@@ -340,10 +353,10 @@
                         class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
                         <i data-lucide="zap" class="w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">Rapid Deployment</h4>
+                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">IMPORTED MATERIALS</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        Our specialized installation teams ensure turn-key delivery with zero safety compromises and
-                        minimal site downtime.
+                        We exclusively use high-quality imported materials to guarantee international safety standards
+                        and a premium finish.
                     </p>
                 </div>
 
@@ -353,10 +366,10 @@
                         class="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform">
                         <i data-lucide="map-pin" class="w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">Pan-India Support</h4>
+                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">50 DAYS COMPLETION</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        With headquarters in New Delhi and a robust service network, we support large-scale
-                        infrastructure across India.
+                        Our specialized teams guarantee project completion within 50 days, delivering turn-key
+                        excellence without delay.
                     </p>
                 </div>
             </div>
@@ -376,8 +389,8 @@
                     <p class="text-[10px] font-bold uppercase tracking-widest text-blue-600">Warranty Coverage</p>
                 </div>
                 <div class="text-center">
-                    <p class="text-4xl font-black text-slate-900 mb-1">Zero</p>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-blue-600">Safety Incidents</p>
+                    <p class="text-4xl font-black text-slate-900 mb-1">Guaranteed</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-blue-600">50 Day Finish</p>
                 </div>
             </div>
         </div>
@@ -664,89 +677,109 @@
         </div>
 
         <section id="contact" class="py-16 lg:py-32 px-4 sm:px-6">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-        <div>
-            <span class="text-blue-600 font-black uppercase tracking-widest text-[11px] mb-4 block text-center lg:text-left">Let's Talk</span>
-            <h3 class="text-3xl md:text-5xl font-extrabold mb-6 lg:mb-8 tracking-tight leading-tight text-slate-900 text-center lg:text-left">
-                Partner with the <br><span class="text-blue-600">Infrastructure Experts</span>.
-            </h3>
-            <p class="text-slate-500 mb-8 lg:mb-12 text-base lg:text-lg leading-relaxed text-center lg:text-left">
-                From initial blueprint to final safety certification, we manage every phase of your project.
-            </p>
-            
-            <div class="grid gap-4 lg:gap-8">
-                <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all text-center sm:text-left">
-                    <div class="w-14 h-14 shrink-0 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
-                        <i data-lucide="phone" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Direct Sales</p>
-                        <p class="font-extrabold text-lg lg:text-xl text-slate-900">+91 7289910884 <br class="hidden sm:block"> +91 9354036537</p>
-                    </div>
-                </div>
-                
-                <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all text-center sm:text-left">
-                    <div class="w-14 h-14 shrink-0 bg-slate-900 text-white rounded-2xl flex items-center justify-center shadow-lg">
-                        <i data-lucide="mail" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Inquiry Mail</p>
-                        <p class="font-extrabold text-lg lg:text-xl text-slate-900 break-all">Ceo.i2services@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div>
+                    <span
+                        class="text-blue-600 font-black uppercase tracking-widest text-[11px] mb-4 block text-center lg:text-left">Let's
+                        Talk</span>
+                    <h3
+                        class="text-3xl md:text-5xl font-extrabold mb-6 lg:mb-8 tracking-tight leading-tight text-slate-900 text-center lg:text-left">
+                        Partner with the <br><span class="text-blue-600">Infrastructure Experts</span>.
+                    </h3>
+                    <p
+                        class="text-slate-500 mb-8 lg:mb-12 text-base lg:text-lg leading-relaxed text-center lg:text-left">
+                        From initial blueprint to final safety certification, we manage every phase of your project.
+                    </p>
 
-        <div class="bg-white p-6 sm:p-8 lg:p-12 rounded-[2rem] lg:rounded-[3.5rem] border border-slate-200 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.1)] relative">
-            <form id="project-form" class="space-y-5 lg:space-y-6">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                    <div class="space-y-2">
-                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Name</label>
-                        <input name="name" type="text" placeholder="Full Name" required
-                            class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Company</label>
-                        <input name="company" type="text" placeholder="Org Name"
-                            class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Contact Info</label>
-                        <input name="contact" type="text" placeholder="Email/Phone" required
-                            class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
-                    </div>
-                </div>
+                    <div class="grid gap-4 lg:gap-8">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all text-center sm:text-left">
+                            <div
+                                class="w-14 h-14 shrink-0 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Direct
+                                    Sales</p>
+                                <p class="font-extrabold text-lg lg:text-xl text-slate-900">+91 7289910884 <br
+                                        class="hidden sm:block"> +91 9354036537</p>
+                            </div>
+                        </div>
 
-                <div class="space-y-2">
-                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Requirement</label>
-                    <div class="relative">
-                        <select name="requirement"
-                            class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium appearance-none text-sm">
-                            <option>Commercial Sports Turf</option>
-                            <option>Safety Grills / Netting</option>
-                            <option>Industrial Sanitization</option>
-                            <option>Custom Engineering</option>
-                        </select>
-                        <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
-                             <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all text-center sm:text-left">
+                            <div
+                                class="w-14 h-14 shrink-0 bg-slate-900 text-white rounded-2xl flex items-center justify-center shadow-lg">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Inquiry
+                                    Mail</p>
+                                <p class="font-extrabold text-lg lg:text-xl text-slate-900 break-all">
+                                    Ceo.i2services@gmail.com</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="space-y-2">
-                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Message</label>
-                    <textarea name="message" placeholder="Describe your project site..."
-                        class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none h-28 lg:h-32 focus:border-blue-600 transition-all font-medium resize-none text-sm"></textarea>
-                </div>
+                <div
+                    class="bg-white p-6 sm:p-8 lg:p-12 rounded-[2rem] lg:rounded-[3.5rem] border border-slate-200 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.1)] relative">
+                    <form id="project-form" class="space-y-5 lg:space-y-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Name</label>
+                                <input name="name" type="text" placeholder="Full Name" required
+                                    class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Company</label>
+                                <input name="company" type="text" placeholder="Org Name"
+                                    class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Contact
+                                    Info</label>
+                                <input name="contact" type="text" placeholder="Email/Phone" required
+                                    class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
+                            </div>
+                        </div>
 
-                <button type="submit"
-                    class="w-full py-5 lg:py-6 bg-blue-600 text-white font-black uppercase tracking-widest text-xs rounded-2xl shadow-xl shadow-blue-500/30 hover:bg-blue-700 active:scale-[0.98] transition-all">
-                    Initialize Project
-                </button>
-            </form>
-        </div>
-    </div>
-</section>
+                        <div class="space-y-2">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Requirement</label>
+                            <div class="relative">
+                                <select name="requirement"
+                                    class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium appearance-none text-sm">
+                                    <option>Commercial Sports Turf</option>
+                                    <option>Safety Grills / Netting</option>
+                                    <option>Industrial Sanitization</option>
+                                    <option>Custom Engineering</option>
+                                </select>
+                                <div
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Message</label>
+                            <textarea name="message" placeholder="Describe your project site..."
+                                class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none h-28 lg:h-32 focus:border-blue-600 transition-all font-medium resize-none text-sm"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-5 lg:py-6 bg-blue-600 text-white font-black uppercase tracking-widest text-xs rounded-2xl shadow-xl shadow-blue-500/30 hover:bg-blue-700 active:scale-[0.98] transition-all">
+                            Initialize Project
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
         <footer class="bg-slate-900 py-12 lg:py-20 text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -936,4 +969,3 @@
 </body>
 
 </html>
-
