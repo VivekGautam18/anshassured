@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Our Projects | Assured Play Surfaces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .hero-mesh {
+            background-image:
+                radial-gradient(at 0% 0%, hsla(217, 100%, 13%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(215, 96%, 10%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(220, 100%, 20%, 1) 0, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .project-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (min-width: 1024px) {
+            .project-card:hover {
+                transform: translateY(-12px);
+                border-color: rgba(59, 130, 246, 0.5);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .menu-hidden {
+            display: none;
+        }
+
+        .menu-visible {
+            display: block;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased hero-mesh min-h-screen">
+
+    <!-- Navigation (Exact same as updated.html) -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 lg:py-6 px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex justify-between items-center bg-white/90 backdrop-blur-md rounded-2xl px-4 lg:px-8 py-3 lg:py-4 shadow-sm border border-slate-100">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 lg:w-10 lg:h-10 bg-blue-600 rounded-lg flex items-center justify-center p-1">
+                        <img src="logo1.png" alt="assured logo" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <span class="text-lg lg:text-xl font-extrabold tracking-tight text-slate-900">ASSURED</span>
+                        <span class="block text-[10px] uppercase tracking-[0.2em] font-bold text-blue-600 -mt-1">Play
+                            Surfaces</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="updated.html#hero"
+                        class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="updated.html#services"
+                        class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="project.html" class="text-sm font-bold text-blue-600">Projects</a>
+                    <a href="updated.html#estimate"
+                        class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Calculator</a>
+                    <a href="updated.html#contact"
+                        class="bg-blue-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">Get
+                        Quote</a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="menu-toggle"
+                    class="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu (Exact same as updated.html) -->
+            <div id="mobile-menu"
+                class="md:hidden absolute top-24 left-4 right-4 bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 menu-hidden z-40">
+                <div class="flex flex-col space-y-4">
+                    <a href="updated.html#hero"
+                        class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Home</a>
+                    <a href="updated.html#services"
+                        class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Services</a>
+                    <a href="project.html"
+                        class="mobile-link text-base font-semibold text-blue-600 p-2 bg-blue-50 rounded-lg">Projects</a>
+                    <a href="updated.html#estimate"
+                        class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Calculator</a>
+                    <a href="updated.html#contact"
+                        class="mobile-link bg-blue-600 text-white px-5 py-3 rounded-xl text-center font-bold shadow-lg shadow-blue-200">Get
+                        Quote</a>
+                </div>
+            </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-48 pb-16 px-6 relative">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <span class="text-blue-500 font-black uppercase tracking-[0.4em] text-[11px] mb-4 block">Proven Track
+                Record</span>
+            <h1 class="text-4xl md:text-7xl font-black text-white mb-6 tracking-tight leading-none">
+                Our Global <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Portfolio.</span>
+            </h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-base md:text-lg font-medium leading-relaxed">
+                Expertly crafted sports infrastructure designed for peak performance and safety.
+            </p>
+        </div>
+    </header>
+
+    <!-- Project Grid -->
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+        <div id="projects-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+            <!-- Projects injected by JS -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950/80 backdrop-blur-md border-t border-white/5 py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">© 2026 i2SERVICES Infrastructure. All
+                Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const projects = [
+            { id: 0, title: "Dishu Box Cricket", type: "Sector 12, Saini, Sunpura, Greater Noida, Uttar Pradesh 203207", img: "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqvAD6oPCvjn9MIeEKb0Rp9g-0h34CfPUsbWbP_O0yXlRL5-zIfC1yd_Z6IW8gSJwRjQhdiH6EPUbAeK0yALbp6RkhTriH4lAshrkPsqdNWgu3IVF3R5AsEQfebEkE2do8osRUDS8cw1wjg=w426-h240-k-no", map: "https://maps.app.goo.gl/iTS8b8kSDbiKtVgaA?g_st=iw" },
+            { id: 1, title: "Elite Maxfort School", type: "Community Guru Harkishan Marg, Maulana Azad Society, Pitampura, New Delhi, Delhi, 110034", img: "https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=800&auto=format&fit=crop", map: "https://maps.app.goo.gl/CDh4hd9a9iDHjpZXA?g_st=iw" },
+            { id: 2, title: "Maxfort School, Pitampura", type: "Parwana Road, 42, Maharshi Parshuram Marg, New Delhi, Delhi 110034", img: "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqe1O34oZMijvALByGO88xFHRvQKoKC4iA_gEk7eHWbz3FOzphF1EdzOCUmheJWYHtUfE9kJPO2vj9MwpCE5hrDVumgVPyKQwT2m8rY1RJxPA5W1M3o2bLPULlEim5D4KYHARTI5-iyZYE=w425-h240-k-no", map: "https://maps.app.goo.gl/LCqyouU71Zz9wU337?g_st=iw" },
+            { id: 3, title: "G H Raisoni University, Amravati", type: "Anjangaon Bari Rd, Badnera, Amravati, Nimbhora, Maharashtra 444701", img: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=800&auto=format&fit=crop", map: "https://maps.app.goo.gl/xS3wAnbLejNXn6Q58?g_st=iw" },
+            { id: 4, title: "G. H. Raisoni College of Engineering", type: "Anjangaon Bari Rd, Badnera, Amravati, Nimbhora, Maharashtra 444701", img: "https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=800&auto=format&fit=crop", map: "https://maps.app.goo.gl/PghnB5Sxd7JB3CC37?g_st=iw" },
+            { id: 5, title: "G H Raisoni Institute of Engineering and Business Management jalgaon", type: "Gate No 57, Shirsoli Rd, Tambapura, Mohadi, Maharashtra 425003", img: "https://images.unsplash.com/photo-1459865264687-595d652de67e?q=80&w=800&auto=format&fit=crop", map: "https://maps.app.goo.gl/TC8RrnDLRG8oTfE47?g_st=iw" },
+            { id: 6, title: "PlayBox Sector 75", type: "Khasra number 241, near Indosam 75, Society, Sarfabad, Sector 75, Noida, Uttar Pradesh 201316", img: "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoXr-yIwKb9itCKeqyAKsVN9jSQkQWYl1cjkt553y1xES9MJBd5moQvW3tmCcFuCJecW4c1xWP-fwbwDjCsY3wA5JmI8V-LII7BbCSg3a6m4hQmw8YhS9Tz5jlejHRVDVmaMzCRtIi3GCc=w408-h306-k-no", map: "https://maps.app.goo.gl/RzZHT6U5UU1TBjSw5?g_st=iw" },
+            { id: 7, title: "Level Up Xperience - Sports Club", type: "Meera Chauhraha, adjacent Rajendra Hyundai, Humaunpur, Firozabad, Uttar Pradesh 283203", img: "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepabFaGgVXkHQ6cldtSbZV4WOu4KeIVnoBjV0V6t3MXBvKR0vYBckan__q0Tw_24z9Kb5-q7eCUd_C6fSrEnLNMGbF1GKLe5jQmXq97wRHe0U1Z-O8fnCTrb8xsG_YjCrjLvIZm8YA5-Z0=w408-h317-k-no", map: "https://maps.app.goo.gl/oWmUy33fhVfuHYMWA?g_st=iw" },
+            { id: 8, title: "Brilliant's Convent Senior Secondary School", type: "Police Lines, near BAL BHARATI PUBLIC SCHOOL PITAMPURA, Block C2, West Enclave, Pitampura, Delhi, 110034", img: "https://images.unsplash.com/photo-1431324155629-1a6eda1eed2d?q=80&w=800&auto=format&fit=crop", map: "https://maps.app.goo.gl/RPQs1DCwLYV8oQG87?g_st=iw" },
+            { id: 9, title: "Nav Bharti Public School, Deepali, Pitampura", type: "Gate No. 1, Nav Bharti Public School, Deepali, Pitampura, Delhi, 110034", img: "1.JPG", map: "https://maps.app.goo.gl/7bBqRuqW7EYnKQSR9?g_st=iw" },
+            { id: 10, title: "Urban Football Club (UFC)", type: "Chinar Bagh, Virk Colony, Patiala, Punjab 147002", img: "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerIgTFzkv3Ko0C6okqah8wx1BTuNsVZHRldH710QjbtvlQZYpjV-LPfz9dkhn5VrcYw9QBPtB8ex_kjrlZFRTQ-qVBoRu4sY3VS_J02NXJeHQS3qNwcR2OwMBiJXmoxZqNkOVy5=w408-h306-k-no", map: "https://maps.app.goo.gl/X29XtH4Jp1ytTtPm9?g_st=iw" },
+            { id: 11, title: "Bharat ram global school", type: "FF8M+2RF Amity university, Knowledge Park III, Greater Noida, Uttar Pradesh 201310", img: "https://images.uniapply.com/uploads/college/image/500/7067/7_220124_145553.jpg", map: "https://maps.app.goo.gl/bMoxGT1rCHTQ8Yhe8?g_st=iw" },
+            { id: 12, title: "The 59 Arena & cafe", type: "92F3+W83, Sakatpur, Gurugram, Haryana 122101", img: "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepDwO6ruVw_xTj7Pk6Vt9_t7q-DVj9M9O8WCf_P9_boSq9qhuRi4OAMMLHfnQwNzgRQGU9kTsol_4Cr4ySzNBzucT2Lq1TwMgrIglPeJnDqk1Pd4ZD5yD7qhpERQioFEv-esGmMLE0dmoQ=w408-h272-k-no", map: "https://maps.app.goo.gl/QHzMGoA47sHA5gaG7?g_st=iw" },
+            { id: 13, title: "Bahara institute of pharmacy", type: "76JP+6JH, Patiala, Punjab 147201", img: "https://images.unsplash.com/photo-1577223625816-7546f13df25d?q=80&w=800&auto=format&fit=crop", map: "https://maps.app.goo.gl/QeThor9QGxsmuQbp9?g_st=iw" },
+            { id: 14, title: "K.R. Mangalam University", type: "Badshahpur Sohna Rd, Gurugram, Sohna Rural, Haryana 122103", img: "2.JPG", map: "https://maps.app.goo.gl/f6SvxfN453GdRFHy6?g_st=iw" },
+            { id: 15, title: "K K D M Public School", type: "MQGH+C4G, Rasulabad, Asalatganj, Uttar Pradesh 209306", img: "https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=800&auto=format&fit=crop", map: "https://maps.app.goo.gl/TP4CqxCMjht4CJqP8?g_st=iw" },
+            { id: 16, title: "XL Arena LPU (Box Cricket and Football Turf)", type: "Lovely Professional University, BH-2, in front of Indoor Sports Arena, Jalandhar, Punjab 144411", img: "3.JPG", map: "https://maps.app.goo.gl/xwwt8JDCTX9Tf54u9?g_st=iw" }
+        ];
+
+        const container = document.getElementById('projects-container');
+
+        projects.forEach(project => {
+            const card = `
+                <div class="project-card bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden flex flex-col group">
+                    <div class="relative h-56 md:h-64 overflow-hidden">
+                        <img src="${project.img}" alt="${project.title}" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110 opacity-80 md:group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 md:left-8">
+                            <span class="bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-lg">
+                                Site #${project.id + 1}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8 flex-1 flex flex-col">
+                        <h3 class="text-xl md:text-2xl font-black text-white mb-2 md:group-hover:text-blue-400 transition-colors">${project.title}</h3>
+                        <p class="text-slate-400 text-xs md:text-sm font-semibold mb-6 flex items-center">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-blue-500"></i>
+                            ${project.type}
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                            <a href="${project.map}" target="_blank" class="flex items-center text-xs md:text-sm font-bold text-white hover:text-blue-400 transition-all group/link">
+                                Open Map
+                                <i data-lucide="map" class="ml-2 w-4 h-4"></i>
+                            </a>
+                            <i data-lucide="shield-check" class="w-5 h-5 text-blue-500/50"></i>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += card;
+        });
+
+        // Menu Toggle Logic (Exact same as updated.html)
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuToggle.querySelector('i');
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isHidden = mobileMenu.classList.contains('menu-hidden');
+            if (isHidden) {
+                mobileMenu.classList.replace('menu-hidden', 'menu-visible');
+                lucide.createIcons({ attrs: { 'data-lucide': 'x' }, nameAttr: 'data-lucide' });
+            } else {
+                mobileMenu.classList.replace('menu-visible', 'menu-hidden');
+                lucide.createIcons({ attrs: { 'data-lucide': 'menu' }, nameAttr: 'data-lucide' });
+            }
+        });
+
+        document.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('menu-visible')) {
+                mobileMenu.classList.replace('menu-visible', 'menu-hidden');
+                lucide.createIcons({ attrs: { 'data-lucide': 'menu' }, nameAttr: 'data-lucide' });
+            }
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Logic
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'lg:py-3');
+                nav.classList.remove('py-4', 'lg:py-6');
+            } else {
+                nav.classList.add('py-4', 'lg:py-6');
+                nav.classList.remove('py-2', 'lg:py-3');
+            }
+        });
+    </script>
+</body>
+
+</html>
