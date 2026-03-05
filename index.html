@@ -463,7 +463,7 @@
         </div>
     </section>
 
-    <section id="services" class="py-32 px-6 bg-slate-50">
+    <!-- <section id="services" class="py-32 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
                 <div class="max-w-2xl">
@@ -682,7 +682,29 @@
                 </div>
 
             </div>
+        </div> -->
+    <section id="services" class="py-32 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <span class="text-blue-600 font-black uppercase tracking-widest text-[11px] mb-4 block">Our Expertise</span>
+                    <h2 class="text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-none">
+                        Specialized <br>Infrastructural Vertical.
+                    </h2>
+                </div>
+                <p class="text-slate-500 max-w-xs text-sm font-medium leading-relaxed">
+                    Customized engineering for diverse requirements—from residential safety to industrial hygiene. Click on any service to view technical specifications.
+                </p>
+            </div>
+
+            <!-- Grid -->
+            <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cards will be injected here via JS for easier data management, 
+                     but the structure remains identical to your request -->
+            </div>
         </div>
+    </section>
 
         <section id="contact" class="py-16 lg:py-32 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
@@ -874,6 +896,200 @@
         </footer>
 
         <script>
+                        const services = [
+            {
+                id: "pickleball",
+                title: "Pickleball Court",
+                short: "Professionally marked court with shock-absorbent surfaces.",
+                img: "https://lodhisport.com/wp-content/uploads/2024/01/Court.9.webp",
+                icon: "shield",
+                description: "Our Pickleball courts are engineered for professional-grade performance and player safety, featuring the latest in acrylic surfacing technology.",
+                features: ["USA Pickleball Standard Dimensions", "Cushioned Multi-layer System", "Anti-glare UV Protection", "Superior Drainage Engineering"]
+            },
+            {
+                id: "consultancy",
+                title: "Project Consultancy",
+                short: "Expert planning and engineering for sports infrastructure.",
+                img: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&q=80&w=800",
+                icon: "users",
+                description: "End-to-end consultancy for sports complexes, including feasibility studies, material selection, and project management.",
+                features: ["Site Analysis & Levelling", "Cost Optimization", "Regulatory Compliance", "Vendor Management"]
+            },
+            {
+                id: "football",
+                title: "Football Turf",
+                short: "FIFA standard artificial grass for high-performance play.",
+                img: "https://turftown.s3.ap-south-1.amazonaws.com/super_admin/tt-1727768803485.webp",
+                icon: "activity",
+                description: "High-density monofilament grass designed to withstand heavy usage while maintaining professional ball roll and bounce.",
+                features: ["FIFA Quality Pro Grade", "Shock Pad Integration", "Infill: SBR or Eco-friendly TPE", "Excellent Water Permeability"]
+            },
+            {
+                id: "cricket",
+                title: "Cricket Turf",
+                short: "Specialized pitch mats and perimeter turf for cricket nets.",
+                img: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=800",
+                icon: "target",
+                description: "Engineered specifically for cricket practice, ensuring consistent bounce and spin response for both batters and bowlers.",
+                features: ["High-density Polyethylene", "Anti-skid Backing", "Standard Practice Lengths", "Weatherproof Design"]
+            },
+            {
+                id: "multisport",
+                title: "Multi Sports Turf",
+                short: "Versatile flooring for hockey, football, and athletics.",
+                img: "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&q=80&w=800",
+                icon: "layers",
+                description: "A hybrid solution for facilities that need to host multiple sports without compromising on the quality of play.",
+                features: ["Cross-linked Foam Base", "Multi-sport Line Markings", "Impact Protection", "Low Maintenance Cost"]
+            },
+            {
+                id: "volleyball",
+                title: "Volleyball Court",
+                short: "Professional court marking and shock-absorbent flooring.",
+                img: "https://t3.ftcdn.net/jpg/04/22/84/12/360_F_422841241_OR69MNhNG3Sxl6pmrKwuoBZPaZpZLt1a.jpg",
+                icon: "circle-dot",
+                description: "High-traction flooring that reduces joint stress during high-impact jumps and dives.",
+                features: ["Synthetic PVC Flooring", "Point Elasticity", "Custom Branding Options", "Indoor/Outdoor Variants"]
+            },
+            {
+                id: "badminton",
+                title: "Badminton Court",
+                short: "Synthetic BWF-standard flooring with anti-skid properties.",
+                img: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&q=80&w=800",
+                icon: "wind",
+                description: "Approved surfaces that provide the perfect friction-to-slide ratio required for professional badminton footwork.",
+                features: ["BWF Compliant", "Multi-layer PVC Matting", "Reinforced Stability", "Excellent Vibration Damping"]
+            },
+            {
+                id: "tennis",
+                title: "Tennis Court",
+                short: "Acrylic synthetic hard court surfaces for professional play.",
+                img: "https://images.unsplash.com/photo-1692288720754-743fbd1f2155?fm=jpg&q=60&w=3000&auto=format&fit=crop",
+                icon: "award",
+                description: "ITF-standard hard courts available in various speeds (Slow, Medium, Fast) to suit coaching and tournament needs.",
+                features: ["100% Acrylic Composition", "Vibrant UV Stable Colors", "Cushion Core Technology", "Textured Non-slip Finish"]
+            },
+            {
+                id: "basketball",
+                title: "Basketball Court",
+                short: "Outdoor and indoor resilient flooring for high impact.",
+                img: "https://t3.ftcdn.net/jpg/03/85/14/30/360_F_385143079_GkXacgm3YCbKi3p7klrYG2blkW8JT2iZ.jpg",
+                icon: "dribbble",
+                description: "Durable, high-performance courts designed for optimal ball bounce and player traction.",
+                features: ["Interlocking Tiles or Acrylic", "High Force Reduction", "Abrasion Resistant", "Seamless Markings"]
+            },
+            {
+                id: "mosquito",
+                title: "Mosquito Mesh",
+                short: "Space-saving retractable zigzag insect screens.",
+                img: "https://m.media-amazon.com/images/I/51kPDCo9doL._AC_UF894,1000_QL80_.jpg",
+                icon: "wind",
+                description: "Modern, aesthetic solutions for pest control that don't block light or ventilation.",
+                features: ["Pleated Fiber Glass Mesh", "Aluminum Powder Coated Frame", "Anti-wind Mechanism", "Easy Maintenance"]
+            },
+            {
+                id: "hanger",
+                title: "Smart Hanger",
+                short: "Ceiling-mounted pulley systems for balcony space.",
+                img: "https://m.media-amazon.com/images/I/61uOUnQIjXL._AC_UF894,1000_QL80_.jpg",
+                icon: "arrow-up-circle",
+                description: "Maximize your balcony utility with heavy-duty ceiling drying systems that keep your space clutter-free.",
+                features: ["Stainless Steel Rods", "High-load Nylon Pulleys", "Space Optimization", "Easy Operation"]
+            },
+            {
+                id: "bird",
+                title: "Bird Netting",
+                short: "UV Stabilized heavy-duty HDPE nets for complete protection.",
+                img: "https://m.media-amazon.com/images/I/81xmc3NmkjL._AC_UF1000,1000_QL80_.jpg",
+                icon: "check-circle-2",
+                description: "Ethical and durable bird control solutions for apartments, balconies, and industrial sites.",
+                features: ["Garware HDPE Quality", "UV Stabilized Material", "Nearly Invisible from Distance", "5+ Years Warranty"]
+            }
+        ];
+
+        function renderCards() {
+            const grid = document.getElementById('servicesGrid');
+            grid.innerHTML = services.map(s => `
+                <div onclick="openModal('${s.id}')" 
+                     class="service-card group bg-slate-900 rounded-[2rem] shadow-xl overflow-hidden flex flex-col text-white cursor-pointer hover:ring-2 hover:ring-blue-500">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="${s.img}" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="${s.title}">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold">${s.title}</h4>
+                            <i data-lucide="plus" class="w-4 h-4 text-slate-500 group-hover:text-blue-400 group-hover:rotate-90 transition-all"></i>
+                        </div>
+                        <p class="text-slate-400 text-[11px] leading-relaxed mb-4">${s.short}</p>
+                        <i data-lucide="${s.icon}" class="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function openModal(id) {
+            const data = services.find(s => s.id === id);
+            const modal = document.getElementById('serviceModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="p-4 bg-blue-600/10 rounded-2xl border border-blue-600/20">
+                        <i data-lucide="${data.icon}" class="w-10 h-10 text-blue-500"></i>
+                    </div>
+                    <div>
+                        <span class="text-blue-500 text-[10px] font-black uppercase tracking-tighter">Technical Details</span>
+                        <h2 class="text-3xl md:text-4xl font-black tracking-tight">${data.title}</h2>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-lg leading-relaxed mb-10">
+                    ${data.description}
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-10">
+                    ${data.features.map(f => `
+                        <div class="flex items-center gap-3">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
+                                <i data-lucide="check" class="w-3 h-3 text-blue-500"></i>
+                            </div>
+                            <span class="text-slate-200 text-sm font-semibold">${f}</span>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="flex-1 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-2xl transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+                        Request Quote
+                    </button>
+                    <button onclick="closeModal()" class="flex-1 py-4 bg-slate-800 hover:bg-slate-700 text-white font-black rounded-2xl transition-all">
+                        Back to Services
+                    </button>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('modal-active');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('serviceModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.classList.remove('modal-active');
+        }
+
+        // Close on clicking outside the modal content
+        document.getElementById('serviceModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Init
+        window.onload = renderCards;
             // Initialize Lucide Icons
             lucide.createIcons();
             const scriptURL = 'https://script.google.com/macros/s/AKfycbz_Qn12OApwpYSMcuUz8kjxImCRaEPcxBo0fWpCNx-308ChU59LRnfqqkiRpAAOeqGpug/exec'
@@ -977,6 +1193,7 @@
 </body>
 
 </html>
+
 
 
 
