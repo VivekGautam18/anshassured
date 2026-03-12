@@ -309,7 +309,7 @@
 
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-blue-600 font-black uppercase tracking-[0.3em] text-[11px] mb-4 block">Assured Play Surfaces
+                <span class="text-blue-600 font-black uppercase tracking-[0.3em] text-[11px] mb-4 block">The i2
                     Advantage</span>
                 <h2 class="text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-none mb-6">
                     Why Industry Leaders <br>Assured Play Surfaces.
@@ -327,7 +327,7 @@
                         class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
                         <i data-lucide="microscope" class="w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">CC GRASS & BELLIN TURF</h4>
+                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">CC GRASS & BALLIN TURF</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">
                         We use world-class CC Grass and Ballin Turf surfaces, ensuring professional-grade playability
                         and unmatched durability for every project.
@@ -340,7 +340,7 @@
                         class="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform">
                         <i data-lucide="shield-check" class="w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">APOLLO & TATA PIPES</h4>
+                    <h4 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight">APOLLO & TATA LIGHTS</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">
                         Our infrastructure is powered by branded Apollo and Tata lighting systems, providing superior
                         visibility and energy efficiency.
@@ -413,7 +413,6 @@
                                     Type</label>
                                 <select id="est-service" onchange="calculateEstimate()"
                                     class="w-full bg-slate-800 border-slate-700 text-white rounded-xl px-4 py-4 focus:ring-2 focus:ring-blue-500 transition-all outline-none">
-                                    <option value="turf" data-rate="290">Sports/Landscape Turf</option>
                                     <option value="turf" data-rate="290">Pickleball Court</option>
                                     <option value="turf" data-rate="290">Football Turf</option>
                                     <option value="turf" data-rate="290">Cricket Turf</option>
@@ -683,279 +682,483 @@
 
             </div>
         </div> -->
-     <section id="services" class="py-32 px-6 bg-slate-50">
+    <!-- <section id="services" class="py-32 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
-            <!-- Header -->
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <span class="text-blue-600 font-black uppercase tracking-widest text-[11px] mb-4 block">Our
+                        Expertise</span>
+                    <h2 class="text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-none">
+                        Specialized <br>Infrastructural Vertical.
+                    </h2>
+                </div>
+                <p class="text-slate-500 max-w-xs text-sm font-medium leading-relaxed">
+                    Customized engineering for diverse requirements—from residential safety to industrial hygiene. Click
+                    on any service to view technical specifications.
+                </p>
+            </div>
+
+            <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            </div>
+        </div>
+    </section> -->
+
+    <section id="services" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
                 <div class="max-w-2xl">
                     <span class="text-blue-600 font-black uppercase tracking-widest text-[11px] mb-4 block">Our Expertise</span>
                     <h2 class="text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-none">
                         Specialized <br>Infrastructural Vertical.
                     </h2>
                 </div>
-                <p class="text-slate-500 max-w-xs text-sm font-medium leading-relaxed">
-                    Customized engineering for diverse requirements—from residential safety to industrial hygiene. Click on any service to view technical specifications.
+                <p class="text-slate-500 max-w-xs text-sm font-medium leading-relaxed border-l-2 border-blue-600 pl-4">
+                    Customized engineering for diverse requirements—from residential safety to industrial hygiene.
                 </p>
             </div>
 
-            <!-- Grid -->
-            <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Cards will be injected here via JS for easier data management, 
-                     but the structure remains identical to your request -->
+            <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+        </div>
+    </section>
+    <div id="serviceModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/90">
+        <div class="bg-slate-950 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] border border-slate-800 shadow-2xl">
+            <div id="modalContent" class="p-8 md:p-12 text-white">
+                </div>
+        </div>
+    </div>
+
+    <!-- Detailed Service Modal -->
+    <!-- <div id="serviceModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md transition-opacity duration-300">
+        <div
+            class="bg-slate-900 w-full max-w-2xl rounded-[2.5rem] border border-slate-800 shadow-2xl overflow-hidden relative modal-animate">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors z-10">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+
+            <div id="modalContent" class="p-8 md:p-12 text-white">
+            </div>
+        </div>
+    </div> -->
+
+    <section id="contact" class="py-16 lg:py-32 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            <div>
+                <span
+                    class="text-blue-600 font-black uppercase tracking-widest text-[11px] mb-4 block text-center lg:text-left">Let's
+                    Talk</span>
+                <h3
+                    class="text-3xl md:text-5xl font-extrabold mb-6 lg:mb-8 tracking-tight leading-tight text-slate-900 text-center lg:text-left">
+                    Partner with the <br><span class="text-blue-600">Infrastructure Experts</span>.
+                </h3>
+                <p class="text-slate-500 mb-8 lg:mb-12 text-base lg:text-lg leading-relaxed text-center lg:text-left">
+                    From initial blueprint to final safety certification, we manage every phase of your project.
+                </p>
+
+                <div class="grid gap-4 lg:gap-8">
+                    <div
+                        class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all text-center sm:text-left">
+                        <div
+                            class="w-14 h-14 shrink-0 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+                            <i data-lucide="phone" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Direct
+                                Sales</p>
+                            <p class="font-extrabold text-lg lg:text-xl text-slate-900">+91 7289910884 <br
+                                    class="hidden sm:block"> +91 9354036537</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all text-center sm:text-left">
+                        <div
+                            class="w-14 h-14 shrink-0 bg-slate-900 text-white rounded-2xl flex items-center justify-center shadow-lg">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Inquiry
+                                Mail</p>
+                            <p class="font-extrabold text-lg lg:text-xl text-slate-900 break-all">
+                                Ceo.i2services@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-white p-6 sm:p-8 lg:p-12 rounded-[2rem] lg:rounded-[3.5rem] border border-slate-200 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.1)] relative">
+                <form id="project-form" class="space-y-5 lg:space-y-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                        <div class="space-y-2">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Name</label>
+                            <input name="name" type="text" placeholder="Full Name" required
+                                class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Company</label>
+                            <input name="company" type="text" placeholder="Org Name"
+                                class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Contact
+                                Info</label>
+                            <input name="contact" type="text" placeholder="Email/Phone" required
+                                class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label
+                            class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Requirement</label>
+                        <div class="relative">
+                            <select name="requirement"
+                                class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium appearance-none text-sm">
+                                <option>Commercial Sports Turf</option>
+                                <option>Safety Grills / Netting</option>
+                                <option>Industrial Sanitization</option>
+                                <option>Custom Engineering</option>
+                            </select>
+                            <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label
+                            class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Message</label>
+                        <textarea name="message" placeholder="Describe your project site..."
+                            class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none h-28 lg:h-32 focus:border-blue-600 transition-all font-medium resize-none text-sm"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-5 lg:py-6 bg-blue-600 text-white font-black uppercase tracking-widest text-xs rounded-2xl shadow-xl shadow-blue-500/30 hover:bg-blue-700 active:scale-[0.98] transition-all">
+                        Initialize Project
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Detailed Service Modal -->
-    <div id="serviceModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md transition-opacity duration-300">
-        <div class="bg-slate-900 w-full max-w-2xl rounded-[2.5rem] border border-slate-800 shadow-2xl overflow-hidden relative modal-animate">
-            <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors z-10">
-                <i data-lucide="x" class="w-8 h-8"></i>
-            </button>
-            
-            <div id="modalContent" class="p-8 md:p-12 text-white">
-                <!-- Dynamic Content -->
+    <footer class="bg-slate-900 py-12 lg:py-20 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <div class="flex items-center">
+                                <img src="logo1.png" alt="assured logo"
+                                    class="w-10 h-10 lg:w-14 lg:h-14 object-contain">
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold tracking-tight">ASSURED</span>
+                            <span
+                                class="block text-[10px] uppercase tracking-[0.2em] font-bold text-blue-400 -mt-1">Play
+                                Surfaces</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">Pioneering premium infrastructure solutions
+                        with a focus on durability, safety, and athlete performance.</p>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-lg mb-6">Quick Links</h5>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li><a href="#why-choose-us" class="hover:text-blue-400 transition-colors">Why us?</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors">Services</a></li>
+                        <li><a href="#estimate" class="hover:text-blue-400 transition-colors">Project Calculator</a>
+                        </li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Safety Certifications</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-lg mb-6">Services</h5>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li><a href="#athletic-tracks" class="hover:text-blue-400 transition-colors">Pickle Ball
+                                Courts</a></li>
+                        <li><a href="#epdm-wetpour" class="hover:text-blue-400 transition-colors">Football turfs</a>
+                        </li>
+                        <li><a href="#synthetic-turf" class="hover:text-blue-400 transition-colors">Cricket Turf</a>
+                        </li>
+                        <li><a href="#tennis-court-surfacing" class="hover:text-blue-400 transition-colors">Tennis
+                                Court Surfacing</a></li>
+                        <li><a href="#industrial-epoxy" class="hover:text-blue-400 transition-colors">Badminton
+                                Court</a></li>
+                        <li><a href="#athletic-tracks" class="hover:text-blue-400 transition-colors">Volleyball
+                                Court</a></li>
+                        <li><a href="#epdm-wetpour" class="hover:text-blue-400 transition-colors">Basketball
+                                Court</a></li>
+                        <li><a href="#synthetic-turf" class="hover:text-blue-400 transition-colors">Mosquito
+                                Mesh</a></li>
+                        <li><a href="#tennis-court-surfacing" class="hover:text-blue-400 transition-colors">Smart
+                                Hanger</a></li>
+                        <li><a href="#industrial-epoxy" class="hover:text-blue-400 transition-colors">Multi Sports
+                                Turf</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-lg mb-6">Newsletter</h5>
+                    <p class="text-slate-400 text-sm mb-4">Stay updated with our latest projects and tech tips.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email"
+                            class="bg-slate-800 border-none rounded-l-xl px-4 py-3 text-sm outline-none w-full">
+                        <button class="bg-blue-600 px-4 rounded-r-xl hover:bg-blue-700 transition-colors">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-slate-500 text-xs font-bold uppercase tracking-widest">
+                <div>© 2026 Assured Play Surfaces India Pvt Ltd.</div>
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
             </div>
         </div>
-    </div>
+    </footer>
 
-        <section id="contact" class="py-16 lg:py-32 px-4 sm:px-6">
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-                <div>
-                    <span
-                        class="text-blue-600 font-black uppercase tracking-widest text-[11px] mb-4 block text-center lg:text-left">Let's
-                        Talk</span>
-                    <h3
-                        class="text-3xl md:text-5xl font-extrabold mb-6 lg:mb-8 tracking-tight leading-tight text-slate-900 text-center lg:text-left">
-                        Partner with the <br><span class="text-blue-600">Infrastructure Experts</span>.
-                    </h3>
-                    <p
-                        class="text-slate-500 mb-8 lg:mb-12 text-base lg:text-lg leading-relaxed text-center lg:text-left">
-                        From initial blueprint to final safety certification, we manage every phase of your project.
-                    </p>
+    <script>
+//         const services = [
+//             {
+//                 "id": "pickleball",
+//                 "title": "Pickleball Court",
+//                 "short": "Professionally marked court with shock-absorbent surfaces.",
+//                 "img": "https://lodhisport.com/wp-content/uploads/2024/01/Court.9.webp",
+//                 "icon": "shield",
+//                 "description": "We construct professional pickleball courts using a 9-layer synthetic acrylic system for smooth bounce and long durability.",
+//                 "features": [
+//                     {
+//                         "name": "Site Inspection & Planning",
+//                         "items": [
+//                             "Ground measurement and layout planning",
+//                             "Soil testing and level planning",
+//                             "Drainage planning for water flow"
+//                         ]
+//                     },
+//                     {
+//                         "name": "Base Preparation",
+//                         "items": [
+//                             "Excavation and leveling of land",
+//                             "Asphalt or Concrete base installation",
+//                             "Vapor barrier installation to prevent moisture"
+//                         ]
+//                     },
+//                     {
+//                         "name": "Surface Coating",
+//                         "items": [
+//                             "9-layer synthetic acrylic cushioning system",
+//                             "UV-resistant pigment for color longevity",
+//                             "Anti-skid texture for player safety"
+//                         ]
+//                     },
+//                     {
+//                         "name": "Court Finishing",
+//                         "items": [
+//                             "Precision line marking (Non-Kitchen and Baseline)",
+//                             "Professional net system installation",
+//                             "Chain-link perimeter fencing (typically 10ft high)"
+//                         ]
+//                     }
+//                 ]
+//             },
+//             {
+//                 id: "consultancy",
+//                 title: "Project Consultancy",
+//                 short: "Expert planning and engineering for sports infrastructure.",
+//                 img: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&q=80&w=800",
+//                 icon: "users",
+//                 description: "End-to-end consultancy for sports complexes, including feasibility studies, material selection, and project management.",
+//                 features: ["Site Analysis & Levelling", "Cost Optimization", "Regulatory Compliance", "Vendor Management"]
+//             },
+//             {
+//                 id: "football",
+//                 title: "Football Turf",
+//                 short: "FIFA standard artificial grass for high-performance play.",
+//                 img: "https://turftown.s3.ap-south-1.amazonaws.com/super_admin/tt-1727768803485.webp",
+//                 icon: "activity",
+//                 description: "High-density monofilament grass designed to withstand heavy usage while maintaining professional ball roll and bounce.",
+//                 features: ["FIFA Quality Pro Grade", "Shock Pad Integration", "Infill: SBR or Eco-friendly TPE", "Excellent Water Permeability"]
+//             },
+//             {
+//                 id: "cricket",
+//                 title: "Cricket Turf",
+//                 short: "Specialized pitch mats and perimeter turf for cricket nets.",
+//                 img: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=800",
+//                 icon: "target",
+//                 description: "Engineered specifically for cricket practice, ensuring consistent bounce and spin response for both batters and bowlers.",
+//                 features: ["High-density Polyethylene", "Anti-skid Backing", "Standard Practice Lengths", "Weatherproof Design"]
+//             },
+//             {
+//                 id: "multisport",
+//                 title: "Multi Sports Turf",
+//                 short: "Versatile flooring for hockey, football, and athletics.",
+//                 img: "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&q=80&w=800",
+//                 icon: "layers",
+//                 description: "A hybrid solution for facilities that need to host multiple sports without compromising on the quality of play.",
+//                 features: ["Cross-linked Foam Base", "Multi-sport Line Markings", "Impact Protection", "Low Maintenance Cost"]
+//             },
+//             {
+//                 id: "volleyball",
+//                 title: "Volleyball Court",
+//                 short: "Professional court marking and shock-absorbent flooring.",
+//                 img: "https://t3.ftcdn.net/jpg/04/22/84/12/360_F_422841241_OR69MNhNG3Sxl6pmrKwuoBZPaZpZLt1a.jpg",
+//                 icon: "circle-dot",
+//                 description: "High-traction flooring that reduces joint stress during high-impact jumps and dives.",
+//                 features: ["Synthetic PVC Flooring", "Point Elasticity", "Custom Branding Options", "Indoor/Outdoor Variants"]
+//             },
+//             {
+//                 id: "badminton",
+//                 title: "Badminton Court",
+//                 short: "Synthetic BWF-standard flooring with anti-skid properties.",
+//                 img: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&q=80&w=800",
+//                 icon: "wind",
+//                 description: "Approved surfaces that provide the perfect friction-to-slide ratio required for professional badminton footwork.",
+//                 features: ["BWF Compliant", "Multi-layer PVC Matting", "Reinforced Stability", "Excellent Vibration Damping"]
+//             },
+//             {
+//                 id: "tennis",
+//                 title: "Tennis Court",
+//                 short: "Acrylic synthetic hard court surfaces for professional play.",
+//                 img: "https://images.unsplash.com/photo-1692288720754-743fbd1f2155?fm=jpg&q=60&w=3000&auto=format&fit=crop",
+//                 icon: "award",
+//                 description: "ITF-standard hard courts available in various speeds (Slow, Medium, Fast) to suit coaching and tournament needs.",
+//                 features: ["100% Acrylic Composition", "Vibrant UV Stable Colors", "Cushion Core Technology", "Textured Non-slip Finish"]
+//             },
+//             {
+//                 id: "basketball",
+//                 title: "Basketball Court",
+//                 short: "Outdoor and indoor resilient flooring for high impact.",
+//                 img: "https://t3.ftcdn.net/jpg/03/85/14/30/360_F_385143079_GkXacgm3YCbKi3p7klrYG2blkW8JT2iZ.jpg",
+//                 icon: "dribbble",
+//                 description: "Durable, high-performance courts designed for optimal ball bounce and player traction.",
+//                 features: ["Interlocking Tiles or Acrylic", "High Force Reduction", "Abrasion Resistant", "Seamless Markings"]
+//             },
+//             {
+//                 id: "mosquito",
+//                 title: "Mosquito Mesh",
+//                 short: "Space-saving retractable zigzag insect screens.",
+//                 img: "https://m.media-amazon.com/images/I/51kPDCo9doL._AC_UF894,1000_QL80_.jpg",
+//                 icon: "wind",
+//                 description: "Modern, aesthetic solutions for pest control that don't block light or ventilation.",
+//                 features: ["Pleated Fiber Glass Mesh", "Aluminum Powder Coated Frame", "Anti-wind Mechanism", "Easy Maintenance"]
+//             },
+//             {
+//                 id: "hanger",
+//                 title: "Smart Hanger",
+//                 short: "Ceiling-mounted pulley systems for balcony space.",
+//                 img: "https://m.media-amazon.com/images/I/61uOUnQIjXL._AC_UF894,1000_QL80_.jpg",
+//                 icon: "arrow-up-circle",
+//                 description: "Maximize your balcony utility with heavy-duty ceiling drying systems that keep your space clutter-free.",
+//                 features: ["Stainless Steel Rods", "High-load Nylon Pulleys", "Space Optimization", "Easy Operation"]
+//             },
+//             {
+//                 id: "bird",
+//                 title: "Bird Netting",
+//                 short: "UV Stabilized heavy-duty HDPE nets for complete protection.",
+//                 img: "https://m.media-amazon.com/images/I/81xmc3NmkjL._AC_UF1000,1000_QL80_.jpg",
+//                 icon: "check-circle-2",
+//                 description: "Ethical and durable bird control solutions for apartments, balconies, and industrial sites.",
+//                 features: ["Garware HDPE Quality", "UV Stabilized Material", "Nearly Invisible from Distance", "5+ Years Warranty"]
+//             }
+//         ];
 
-                    <div class="grid gap-4 lg:gap-8">
-                        <div
-                            class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all text-center sm:text-left">
-                            <div
-                                class="w-14 h-14 shrink-0 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
-                                <i data-lucide="phone" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Direct
-                                    Sales</p>
-                                <p class="font-extrabold text-lg lg:text-xl text-slate-900">+91 7289910884 <br
-                                        class="hidden sm:block"> +91 9354036537</p>
-                            </div>
-                        </div>
 
-                        <div
-                            class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all text-center sm:text-left">
-                            <div
-                                class="w-14 h-14 shrink-0 bg-slate-900 text-white rounded-2xl flex items-center justify-center shadow-lg">
-                                <i data-lucide="mail" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Inquiry
-                                    Mail</p>
-                                <p class="font-extrabold text-lg lg:text-xl text-slate-900 break-all">
-                                    Ceo.i2services@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+//         function renderCards() {
+//             const grid = document.getElementById('servicesGrid');
+//             grid.innerHTML = services.map(s => `
+//                 <div onclick="openModal('${s.id}')" 
+//                      class="service-card group bg-slate-900 rounded-[2rem] shadow-xl overflow-hidden flex flex-col text-white cursor-pointer hover:ring-2 hover:ring-blue-500">
+//                     <div class="h-48 overflow-hidden relative">
+//                         <img src="${s.img}" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="${s.title}">
+//                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+//                     </div>
+//                     <div class="p-6 flex-1">
+//                         <div class="flex justify-between items-start mb-2">
+//                             <h4 class="text-lg font-bold">${s.title}</h4>
+//                             <i data-lucide="plus" class="w-4 h-4 text-slate-500 group-hover:text-blue-400 group-hover:rotate-90 transition-all"></i>
+//                         </div>
+//                         <p class="text-slate-400 text-[11px] leading-relaxed mb-4">${s.short}</p>
+//                         <i data-lucide="${s.icon}" class="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform"></i>
+//                     </div>
+//                 </div>
+//             `).join('');
+//             lucide.createIcons();
+//         }
 
-                <div
-                    class="bg-white p-6 sm:p-8 lg:p-12 rounded-[2rem] lg:rounded-[3.5rem] border border-slate-200 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.1)] relative">
-                    <form id="project-form" class="space-y-5 lg:space-y-6">
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                            <div class="space-y-2">
-                                <label
-                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Name</label>
-                                <input name="name" type="text" placeholder="Full Name" required
-                                    class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
-                            </div>
-                            <div class="space-y-2">
-                                <label
-                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Company</label>
-                                <input name="company" type="text" placeholder="Org Name"
-                                    class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
-                            </div>
-                            <div class="space-y-2">
-                                <label
-                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Contact
-                                    Info</label>
-                                <input name="contact" type="text" placeholder="Email/Phone" required
-                                    class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium text-sm">
-                            </div>
-                        </div>
+//         function openModal(id) {
+//             const data = services.find(s => s.id === id);
+//             const modal = document.getElementById('serviceModal');
+//             const content = document.getElementById('modalContent');
 
-                        <div class="space-y-2">
-                            <label
-                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Requirement</label>
-                            <div class="relative">
-                                <select name="requirement"
-                                    class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none focus:border-blue-600 transition-all font-medium appearance-none text-sm">
-                                    <option>Commercial Sports Turf</option>
-                                    <option>Safety Grills / Netting</option>
-                                    <option>Industrial Sanitization</option>
-                                    <option>Custom Engineering</option>
-                                </select>
-                                <div
-                                    class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
-                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                                </div>
-                            </div>
-                        </div>
+//             content.innerHTML = `
+//                 <div class="flex items-center gap-4 mb-8">
+//                     <div class="p-4 bg-blue-600/10 rounded-2xl border border-blue-600/20">
+//                         <i data-lucide="${data.icon}" class="w-10 h-10 text-blue-500"></i>
+//                     </div>
+//                     <div>
+//                         <span class="text-blue-500 text-[10px] font-black uppercase tracking-tighter">Technical Details</span>
+//                         <h2 class="text-3xl md:text-4xl font-black tracking-tight">${data.title}</h2>
+//                     </div>
+//                 </div>
+                
+//                 <p class="text-slate-400 text-lg leading-relaxed mb-10">
+//                     ${data.description}
+//                 </p>
 
-                        <div class="space-y-2">
-                            <label
-                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Message</label>
-                            <textarea name="message" placeholder="Describe your project site..."
-                                class="w-full bg-slate-50 p-4 lg:p-5 rounded-2xl border border-slate-100 outline-none h-28 lg:h-32 focus:border-blue-600 transition-all font-medium resize-none text-sm"></textarea>
-                        </div>
+//                 <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-10">
+//                     ${data.features.map(f => `
+//                         <div class="flex items-center gap-3">
+//                             <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
+//                                 <i data-lucide="check" class="w-3 h-3 text-blue-500"></i>
+//                             </div>
+//                             <span class="text-slate-200 text-sm font-semibold">${f}</span>
+//                         </div>
+//                     `).join('')}
+//                 </div>
 
-                        <button type="submit"
-                            class="w-full py-5 lg:py-6 bg-blue-600 text-white font-black uppercase tracking-widest text-xs rounded-2xl shadow-xl shadow-blue-500/30 hover:bg-blue-700 active:scale-[0.98] transition-all">
-                            Initialize Project
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
+//                 <div class="flex flex-col sm:flex-row gap-4">
+// <a href="#contact" onclick="closeModal()" class="flex-1 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-2xl transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] flex items-center justify-center">
+//     Request Quote
+// </a>
+//                     <button onclick="closeModal()" class="flex-1 py-4 bg-slate-800 hover:bg-slate-700 text-white font-black rounded-2xl transition-all">
+//                         Back to Services
+//                     </button>
+//                 </div>
+//             `;
 
-        <footer class="bg-slate-900 py-12 lg:py-20 text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                    <div class="space-y-6">
-                        <div class="flex items-center space-x-2">
-                            <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                                <div class="flex items-center">
-                                    <img src="logo1.png" alt="assured logo"
-                                        class="w-10 h-10 lg:w-14 lg:h-14 object-contain">
-                                </div>
-                            </div>
-                            <div>
-                                <span class="text-xl font-extrabold tracking-tight">ASSURED</span>
-                                <span
-                                    class="block text-[10px] uppercase tracking-[0.2em] font-bold text-blue-400 -mt-1">Play
-                                    Surfaces</span>
-                            </div>
-                        </div>
-                        <p class="text-slate-400 text-sm leading-relaxed">Pioneering premium infrastructure solutions
-                            with a focus on durability, safety, and athlete performance.</p>
-                    </div>
+//             modal.classList.remove('hidden');
+//             modal.classList.add('flex');
+//             document.body.classList.add('modal-active');
+//             lucide.createIcons();
+//         }
 
-                    <div>
-                        <h5 class="font-bold text-lg mb-6">Quick Links</h5>
-                        <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                            <li><a href="#why-choose-us" class="hover:text-blue-400 transition-colors">Why us?</a></li>
-                            <li><a href="#services" class="hover:text-blue-400 transition-colors">Services</a></li>
-                            <li><a href="#estimate" class="hover:text-blue-400 transition-colors">Project Calculator</a>
-                            </li>
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">Safety Certifications</a></li>
-                        </ul>
-                    </div>
+//         function closeModal() {
+//             const modal = document.getElementById('serviceModal');
+//             modal.classList.add('hidden');
+//             modal.classList.remove('flex');
+//             document.body.classList.remove('modal-active');
+//         }
 
-                    <div>
-                        <h5 class="font-bold text-lg mb-6">Services</h5>
-                        <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                            <li><a href="#athletic-tracks" class="hover:text-blue-400 transition-colors">Pickle Ball
-                                    Courts</a></li>
-                            <li><a href="#epdm-wetpour" class="hover:text-blue-400 transition-colors">Football turfs</a>
-                            </li>
-                            <li><a href="#synthetic-turf" class="hover:text-blue-400 transition-colors">Cricket Turf</a>
-                            </li>
-                            <li><a href="#tennis-court-surfacing" class="hover:text-blue-400 transition-colors">Tennis
-                                    Court Surfacing</a></li>
-                            <li><a href="#industrial-epoxy" class="hover:text-blue-400 transition-colors">Badminton
-                                    Court</a></li>
-                            <li><a href="#athletic-tracks" class="hover:text-blue-400 transition-colors">Volleyball
-                                    Court</a></li>
-                            <li><a href="#epdm-wetpour" class="hover:text-blue-400 transition-colors">Basketball
-                                    Court</a></li>
-                            <li><a href="#synthetic-turf" class="hover:text-blue-400 transition-colors">Mosquito
-                                    Mesh</a></li>
-                            <li><a href="#tennis-court-surfacing" class="hover:text-blue-400 transition-colors">Smart
-                                    Hanger</a></li>
-                            <li><a href="#industrial-epoxy" class="hover:text-blue-400 transition-colors">Multi Sports
-                                    Turf</a></li>
-                        </ul>
-                    </div>
+//         // Close on clicking outside the modal content
+//         document.getElementById('serviceModal').addEventListener('click', function (e) {
+//             if (e.target === this) closeModal();
+//         });
 
-                    <div>
-                        <h5 class="font-bold text-lg mb-6">Newsletter</h5>
-                        <p class="text-slate-400 text-sm mb-4">Stay updated with our latest projects and tech tips.</p>
-                        <div class="flex">
-                            <input type="email" placeholder="Email"
-                                class="bg-slate-800 border-none rounded-l-xl px-4 py-3 text-sm outline-none w-full">
-                            <button class="bg-blue-600 px-4 rounded-r-xl hover:bg-blue-700 transition-colors">
-                                <i data-lucide="send" class="w-4 h-4"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-slate-500 text-xs font-bold uppercase tracking-widest">
-                    <div>© 2026 Assured Play Surfaces India Pvt Ltd.</div>
-                    <div class="flex space-x-8">
-                        <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                        <a href="#" class="hover:text-white transition-colors">Terms</a>
-                        <a href="#" class="hover:text-white transition-colors">Sitemap</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <script>
-                        const services = [
-            {
-                id: "pickleball",
-                title: "Pickleball Court",
-                short: "Professionally marked court with shock-absorbent surfaces.",
-                img: "https://lodhisport.com/wp-content/uploads/2024/01/Court.9.webp",
-                icon: "shield",
-                description: "Our Pickleball courts are engineered for professional-grade performance and player safety, featuring the latest in acrylic surfacing technology.",
-                features: ["USA Pickleball Standard Dimensions", "Cushioned Multi-layer System", "Anti-glare UV Protection", "Superior Drainage Engineering"]
-            },
-            {
-                id: "consultancy",
-                title: "Project Consultancy",
-                short: "Expert planning and engineering for sports infrastructure.",
-                img: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&q=80&w=800",
-                icon: "users",
-                description: "End-to-end consultancy for sports complexes, including feasibility studies, material selection, and project management.",
-                features: ["Site Analysis & Levelling", "Cost Optimization", "Regulatory Compliance", "Vendor Management"]
-            },
-            {
-                id: "football",
-                title: "Football Turf",
-                short: "FIFA standard artificial grass for high-performance play.",
-                img: "https://turftown.s3.ap-south-1.amazonaws.com/super_admin/tt-1727768803485.webp",
-                icon: "activity",
-                description: "High-density monofilament grass designed to withstand heavy usage while maintaining professional ball roll and bounce.",
-                features: ["FIFA Quality Pro Grade", "Shock Pad Integration", "Infill: SBR or Eco-friendly TPE", "Excellent Water Permeability"]
-            },
-            {
-                id: "cricket",
-                title: "Cricket Turf",
-                short: "Specialized pitch mats and perimeter turf for cricket nets.",
-                img: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=800",
-                icon: "target",
-                description: "Engineered specifically for cricket practice, ensuring consistent bounce and spin response for both batters and bowlers.",
-                features: ["High-density Polyethylene", "Anti-skid Backing", "Standard Practice Lengths", "Weatherproof Design"]
-            },
-            {
-                id: "multisport",
-                title: "Multi Sports Turf",
-                short: "Versatile flooring for hockey, football, and athletics.",
-                img: "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&q=80&w=800",
-                icon: "layers",
-                description: "A hybrid solution for facilities that need to host multiple sports without compromising on the quality of play.",
-                features: ["Cross-linked Foam Base", "Multi-sport Line Markings", "Impact Protection", "Low Maintenance Cost"]
-            },
+//         // Init
+//         window.onload = renderCards;
+const services = [
             {
                 id: "volleyball",
                 title: "Volleyball Court",
@@ -963,62 +1166,118 @@
                 img: "https://t3.ftcdn.net/jpg/04/22/84/12/360_F_422841241_OR69MNhNG3Sxl6pmrKwuoBZPaZpZLt1a.jpg",
                 icon: "circle-dot",
                 description: "High-traction flooring that reduces joint stress during high-impact jumps and dives.",
-                features: ["Synthetic PVC Flooring", "Point Elasticity", "Custom Branding Options", "Indoor/Outdoor Variants"]
+                process: [
+                    {name : "Site Inspection & Layout" , items : ["Ground measurement and court layout design","Surface type selection (sand / synthetic / concrete)"]},
+                    {name : "Ground Preparation" , items : ["Excavation and leveling","Base layer compaction","Drainage planning for outdoor courts"]},
+                    {name : "Surface Construction Depending on requirement:" , items : ["Sand Volleyball Court : Sand filling with proper depth","Synthetic Volleyball Court : oncrete or asphalt base"]},
+                    {name : "Pole & Net Installation" , items : ["Heavy-duty volleyball poles","Professional volleyball net installation"]},
+                    {name : "Court Marking" , items : ["Standard volleyball court markings"]},
+                    {name : "Lighting Installation" , items : ["LED flood lights for night play"]},
+                    {name : "Final Testing & Handover" , items : ["Surface quality testing","Net height and alignment check","Ready-to-play volleyball facility"]},
+                ]
             },
             {
-                id: "badminton",
-                title: "Badminton Court",
-                short: "Synthetic BWF-standard flooring with anti-skid properties.",
-                img: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&q=80&w=800",
-                icon: "wind",
-                description: "Approved surfaces that provide the perfect friction-to-slide ratio required for professional badminton footwork.",
-                features: ["BWF Compliant", "Multi-layer PVC Matting", "Reinforced Stability", "Excellent Vibration Damping"]
+                id: "football",
+                title: "Football Turf",
+                short: "FIFA standard artificial grass with dynamic drainage.",
+                img: "https://turftown.s3.ap-south-1.amazonaws.com/super_admin/tt-1727768803485.webp",
+                icon: "activity",
+                description: "We build high-performance football turfs using a dynamic base drainage system to ensure long life, proper water drainage, and excellent playing comfort. ",
+                process: [
+                    { name: "Site Inspection & Planning", items: ["Ground measurement and layout planning", "Soil testing and level planning","Drainage planning for water flow"] },
+                    { name: "Base Preparation", items: ["Excavation and leveling of land", "Installation of Dynamic Base with proper drainage system" , "Multi-layer stone compaction for strength and stability"] },
+                    { name: "Turf Installation", items: ["Installation of 50 mm artificial football grass", "Silica sand and rubber granule infill" , "Proper brushing and leveling"] },
+                    { name: "Flood Light Installation", items: ["High mast LED flood lights", "Proper lighting distribution for night matches"] },
+                    { name: "Final Testing & Handover" , items: ["Surface testing" , "Drainage testing" , "Final finishing and project handover"]}
+                ]
             },
             {
                 id: "tennis",
                 title: "Tennis Court",
-                short: "Acrylic synthetic hard court surfaces for professional play.",
+                short: "ITF-standard acrylic surfaces for professional play.",
                 img: "https://images.unsplash.com/photo-1692288720754-743fbd1f2155?fm=jpg&q=60&w=3000&auto=format&fit=crop",
                 icon: "award",
-                description: "ITF-standard hard courts available in various speeds (Slow, Medium, Fast) to suit coaching and tournament needs.",
-                features: ["100% Acrylic Composition", "Vibrant UV Stable Colors", "Cushion Core Technology", "Textured Non-slip Finish"]
+                description: "Specialized synthetic and acrylic courts designed for academies and clubs with focus on shock absorption.",
+                process: [
+                    { name: "Site Inspection & Planning", items: ["Site measurement and layout design", "Soil testing and level planning", "Proper drainage planning for water flow"] },
+                    { name: "Ground Excavation & Base Preparation", items: ["Land excavation and leveling", "Stone aggregate base compaction","Proper slope creation for drainage"] },
+                    { name: "Concrete / Asphalt Base Construction", items: ["Construction of PCC or Asphalt base", "Surface leveling and curing" , "Crack prevention treatment"] },
+                    { name: "Synthetic Acrylic Surface Installation", items: ["Primer coating application","Cushion layers for shock absorption","Multiple acrylic surface layers","Anti-skid sports coating"] },
+                    { name: "Court Marking" , items: ["International standard tennis court line marking","Accurate measurements for singles and doubles courts"]},
+                    { name: "Fencing Installation" , items: ["Heavy-duty chain link fencing around the court","High-quality netting to prevent ball escape"]},
+                    { name: "Lighting System Installation" , items: ["Installation of LED flood lights","Proper light distribution for night play"]},
+                    { name: "Net & Accessories Installation" , items: ["Professional tennis net and poles","Center strap installation"]},
+                    { name: "Final Inspection & Handover" , items: ["Surface smoothness testing","Ball bounce testing","Final finishing and project handover"]}
+                ]
+            },
+            {
+                id: "badminton",
+                title: "Badminton Court",
+                short: "BWF-compliant indoor courts with anti-skid properties.",
+                img: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&q=80&w=800",
+                icon: "wind",
+                description: "We specialize in building professional indoor badminton courts designed for tournaments, academies, and sports complexes. Our courts provide excellent grip, proper shock absorption, and international-standard playing conditions.",
+                process: [
+                    { name: "Site Planning & Design", items: ["Space measurement and court layout planning", "Height clearance planning for indoor play" , "Ventilation and lighting planning"] },
+                    { name: "Structure Construction", items: ["Steel structure or shed construction", "Roofing installation (PPGI sheet / sandwich panels)" ,"Side wall cladding and ventilation systems"] },
+                    { name: "Base Preparation", items: ["Concrete or wooden sub-base preparation" ,"Surface leveling and moisture control"] },
+                    { name: "Court Flooring Installation" , items: ["Installation of PVC Vinyl Sports Flooring / Wooden Flooring","Shock absorption layers for player safety","Anti-slip sports surface"]},
+                    { name: "Court Marking" , items: ["Professional badminton court line marking","Tournament standard dimensions"]},
+                    { name: "Lighting System" , items: ["Indoor sports LED lighting system","Glare-free lights for better visibility"]},
+                    {name : "Net & Accessories Installation" , items: ["Badminton poles and nets","Seating area for players and spectators"]},
+                    { name : "Final Inspection & Handover" , items : ["Surface testing","Lighting and court inspection","Ready-to-play indoor badminton facility"]}
+                ]
+            },
+            {
+                id: "pickleball",
+                title: "Pickleball Court",
+                short: "9-layer synthetic acrylic system for smooth bounce.",
+                img: "https://lodhisport.com/wp-content/uploads/2024/01/Court.9.webp",
+                icon: "shield",
+                description: "Constructing professional pickleball courts with weather-resistant coatings and precision marking.",
+                process: [
+                    { name: "Asphalt Base Construction", items: ["Excavation and leveling", "Stone base compaction" ,"Asphalt surface preparation"] },
+                    { name: "Surface Preparation", items: ["Crack filling and surface smoothing", "Primer application"] },
+                    { name: "Synthetic Layer Installation", items: ["Installation of 9 layer acrylic synthetic system", "Anti-skid and weather-resistant coating"] },
+                    { name: "Court Marking", items: ["Professional pickleball court line marking"] },
+                    {name : "Fencing & Lighting" , items: ["Perimeter fencing installation","LED flood lights for night play"]},
+                    { name: "Final Inspection",items: ["Surface quality check" , "Game bounce testing"]}
+                ]
+            },
+            {
+                id: "cricket",
+                title: "Cricket Turf",
+                short: "Specialized pitch mats and perimeter turf for cricket nets.",
+                img: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=800",
+                icon: "target",
+                description: "We develop high-quality cricket facilities including practice nets and turf grounds.",
+                process: [
+                    {name : "Ground Preparation" , items :["Land leveling and compaction","Base layer preparation"]},
+                    {name : "Pitch Construction" , items :["Cricket pitch preparation","Turf or matting pitch installation"]},
+                    {name : "Practice Net Installation" , items :["Professional cricket nets","Strong pole structure"]},
+                    {name : "Boundary & Fencing" , items :["Boundary fencing installation"]},
+                    {name : "Lighting System" , items :["Flood lights for night practice"]},
+                    {name : "Final Handover" , items :["Surface inspection","Ready-to-play facility delivery"]},
+                ]
             },
             {
                 id: "basketball",
                 title: "Basketball Court",
-                short: "Outdoor and indoor resilient flooring for high impact.",
+                short: "High-impact resilient flooring for indoor/outdoor use.",
                 img: "https://t3.ftcdn.net/jpg/03/85/14/30/360_F_385143079_GkXacgm3YCbKi3p7klrYG2blkW8JT2iZ.jpg",
                 icon: "dribbble",
-                description: "Durable, high-performance courts designed for optimal ball bounce and player traction.",
-                features: ["Interlocking Tiles or Acrylic", "High Force Reduction", "Abrasion Resistant", "Seamless Markings"]
+                description: "We build professional basketball courts with high-performance synthetic flooring systems designed for durability and player safety.",
+                process: [
+                    { name: "Base Preparation", items: ["Excavation and leveling", "Stone base compaction" , "Asphalt or concrete base installation"] },
+                    { name: "Surface Coating", items: ["Primer coating", "Multiple acrylic synthetic layers"] },
+                    { name: "Court Marking", items: ["Standard basketball line markings"] },
+                    { name: "Equipment Installation" ,  items: ["Basketball poles and rings", "Backboards installation"]
+
+                    },
+                    {name: "Flood Lighting System" , items: ["LED sports flood lights"]},
+                    { name: "Final Finishing" , items: ["Anti-skid surface testing","Court readiness inspection"]}
+                ]
             },
-            {
-                id: "mosquito",
-                title: "Mosquito Mesh",
-                short: "Space-saving retractable zigzag insect screens.",
-                img: "https://m.media-amazon.com/images/I/51kPDCo9doL._AC_UF894,1000_QL80_.jpg",
-                icon: "wind",
-                description: "Modern, aesthetic solutions for pest control that don't block light or ventilation.",
-                features: ["Pleated Fiber Glass Mesh", "Aluminum Powder Coated Frame", "Anti-wind Mechanism", "Easy Maintenance"]
-            },
-            {
-                id: "hanger",
-                title: "Smart Hanger",
-                short: "Ceiling-mounted pulley systems for balcony space.",
-                img: "https://m.media-amazon.com/images/I/61uOUnQIjXL._AC_UF894,1000_QL80_.jpg",
-                icon: "arrow-up-circle",
-                description: "Maximize your balcony utility with heavy-duty ceiling drying systems that keep your space clutter-free.",
-                features: ["Stainless Steel Rods", "High-load Nylon Pulleys", "Space Optimization", "Easy Operation"]
-            },
-            {
-                id: "bird",
-                title: "Bird Netting",
-                short: "UV Stabilized heavy-duty HDPE nets for complete protection.",
-                img: "https://m.media-amazon.com/images/I/81xmc3NmkjL._AC_UF1000,1000_QL80_.jpg",
-                icon: "check-circle-2",
-                description: "Ethical and durable bird control solutions for apartments, balconies, and industrial sites.",
-                features: ["Garware HDPE Quality", "UV Stabilized Material", "Nearly Invisible from Distance", "5+ Years Warranty"]
-            }
         ];
 
         function renderCards() {
@@ -1026,17 +1285,21 @@
             grid.innerHTML = services.map(s => `
                 <div onclick="openModal('${s.id}')" 
                      class="service-card group bg-slate-900 rounded-[2rem] shadow-xl overflow-hidden flex flex-col text-white cursor-pointer hover:ring-2 hover:ring-blue-500">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="${s.img}" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="${s.title}">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="${s.img}" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" alt="${s.title}">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
                     </div>
-                    <div class="p-6 flex-1">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-lg font-bold">${s.title}</h4>
-                            <i data-lucide="plus" class="w-4 h-4 text-slate-500 group-hover:text-blue-400 group-hover:rotate-90 transition-all"></i>
+                    <div class="p-8 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-bold">${s.title}</h4>
+                            <div class="bg-blue-600/20 p-2 rounded-lg">
+                                <i data-lucide="${s.icon}" class="w-5 h-5 text-blue-400"></i>
+                            </div>
                         </div>
-                        <p class="text-slate-400 text-[11px] leading-relaxed mb-4">${s.short}</p>
-                        <i data-lucide="${s.icon}" class="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform"></i>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">${s.short}</p>
+                        <div class="flex items-center text-blue-400 text-xs font-bold uppercase tracking-widest">
+                            View Tech Specs <i data-lucide="arrow-right" class="w-3 h-3 ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
                     </div>
                 </div>
             `).join('');
@@ -1047,40 +1310,53 @@
             const data = services.find(s => s.id === id);
             const modal = document.getElementById('serviceModal');
             const content = document.getElementById('modalContent');
-            
+
             content.innerHTML = `
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="p-4 bg-blue-600/10 rounded-2xl border border-blue-600/20">
-                        <i data-lucide="${data.icon}" class="w-10 h-10 text-blue-500"></i>
+                <div class="flex flex-col md:flex-row justify-between items-start gap-6 mb-12">
+                    <div class="flex items-center gap-6">
+                        <div class="p-5 bg-blue-600 rounded-3xl">
+                            <i data-lucide="${data.icon}" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <div>
+                            <span class="text-blue-500 text-xs font-black uppercase tracking-widest">Infrastructural Specs</span>
+                            <h2 class="text-4xl md:text-5xl font-black tracking-tight">${data.title}</h2>
+                        </div>
                     </div>
-                    <div>
-                        <span class="text-blue-500 text-[10px] font-black uppercase tracking-tighter">Technical Details</span>
-                        <h2 class="text-3xl md:text-4xl font-black tracking-tight">${data.title}</h2>
-                    </div>
+                    <button onclick="closeModal()" class="text-slate-500 hover:text-white transition-colors">
+                        <i data-lucide="x" class="w-8 h-8"></i>
+                    </button>
                 </div>
                 
-                <p class="text-slate-400 text-lg leading-relaxed mb-10">
-                    ${data.description}
-                </p>
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-1">
+                        <h3 class="text-blue-400 font-bold mb-4 uppercase text-xs tracking-widest">Overview</h3>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-8">${data.description}</p>
+                        <a href="#contact" onclick="closeModal()" class="block w-full py-4 bg-blue-600 hover:bg-blue-500 text-white text-center font-black rounded-2xl transition-all shadow-lg shadow-blue-900/20">
+                            Get Quote
+                        </a>
+                    </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-10">
-                    ${data.features.map(f => `
-                        <div class="flex items-center gap-3">
-                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
-                                <i data-lucide="check" class="w-3 h-3 text-blue-500"></i>
-                            </div>
-                            <span class="text-slate-200 text-sm font-semibold">${f}</span>
+                    <div class="lg:col-span-2 bg-slate-900/50 border border-slate-800 p-8 rounded-[2rem]">
+                        <h3 class="text-white font-bold mb-8 flex items-center gap-2">
+                            <i data-lucide="settings" class="w-5 h-5 text-blue-500"></i> 
+                            Construction Process
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            ${data.process.map(p => `
+                                <div>
+                                    <h4 class="text-blue-500 font-bold text-sm mb-3 uppercase tracking-wide">${p.name}</h4>
+                                    <ul class="space-y-2">
+                                        ${p.items.map(item => `
+                                            <li class="flex items-start gap-2 text-slate-400 text-sm">
+                                                <i data-lucide="chevron-right" class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0"></i>
+                                                ${item}
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            `).join('')}
                         </div>
-                    `).join('')}
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#contact" onclick="closeModal()" class="flex-1 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-2xl transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] flex items-center justify-center">
-    Request Quote
-</a>
-                    <button onclick="closeModal()" class="flex-1 py-4 bg-slate-800 hover:bg-slate-700 text-white font-black rounded-2xl transition-all">
-                        Back to Services
-                    </button>
+                    </div>
                 </div>
             `;
 
@@ -1097,120 +1373,107 @@
             document.body.classList.remove('modal-active');
         }
 
-        // Close on clicking outside the modal content
-        document.getElementById('serviceModal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
+        window.onload = renderCards;
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz_Qn12OApwpYSMcuUz8kjxImCRaEPcxBo0fWpCNx-308ChU59LRnfqqkiRpAAOeqGpug/exec'
+
+        const form = document.getElementById('project-form')
+        const btn = form.querySelector('button')
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            btn.disabled = true
+            btn.innerText = 'Initializing...'
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    btn.innerText = '✓ Project Initialized'
+                    btn.classList.replace('bg-blue-600', 'bg-green-600') // Turn green on success
+                    form.reset()
+
+                    // Revert button after 3 seconds
+                    setTimeout(() => {
+                        btn.innerText = 'Initialize Project'
+                        btn.classList.replace('bg-green-600', 'bg-blue-600')
+                        btn.disabled = false
+                    }, 3000)
+                })
+                .catch(error => {
+                    alert('Error! Please check your connection.')
+                    btn.disabled = false
+                    btn.innerText = 'Initialize Project'
+                })
+        })
+
+        // 1. Mobile Menu Toggle Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('menu-visible');
+            if (isOpen) {
+                mobileMenu.classList.remove('menu-visible');
+                mobileMenu.classList.add('menu-hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            } else {
+                mobileMenu.classList.remove('menu-hidden');
+                mobileMenu.classList.add('menu-visible');
+                menuIcon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('menu-visible');
+                mobileMenu.classList.add('menu-hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
         });
 
-        // Init
-        window.onload = renderCards;
-            // Initialize Lucide Icons
-            lucide.createIcons();
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbz_Qn12OApwpYSMcuUz8kjxImCRaEPcxBo0fWpCNx-308ChU59LRnfqqkiRpAAOeqGpug/exec'
+        // 2. Section Scroll Estimator Logic
+        function calculateEstimate() {
+            const select = document.getElementById('est-service');
+            const rate = parseFloat(select.options[select.selectedIndex].dataset.rate);
+            const areaInput = document.getElementById('est-area');
+            const area = parseFloat(areaInput.value);
+            const resultDisplay = document.getElementById('est-result');
 
-            const form = document.getElementById('project-form')
-            const btn = form.querySelector('button')
-
-            form.addEventListener('submit', e => {
-                e.preventDefault()
-                btn.disabled = true
-                btn.innerText = 'Initializing...'
-
-                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                    .then(response => {
-                        btn.innerText = '✓ Project Initialized'
-                        btn.classList.replace('bg-blue-600', 'bg-green-600') // Turn green on success
-                        form.reset()
-
-                        // Revert button after 3 seconds
-                        setTimeout(() => {
-                            btn.innerText = 'Initialize Project'
-                            btn.classList.replace('bg-green-600', 'bg-blue-600')
-                            btn.disabled = false
-                        }, 3000)
-                    })
-                    .catch(error => {
-                        alert('Error! Please check your connection.')
-                        btn.disabled = false
-                        btn.innerText = 'Initialize Project'
-                    })
-            })
-
-            // 1. Mobile Menu Toggle Logic
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
-
-            function toggleMenu() {
-                const isOpen = mobileMenu.classList.contains('menu-visible');
-                if (isOpen) {
-                    mobileMenu.classList.remove('menu-visible');
-                    mobileMenu.classList.add('menu-hidden');
-                    menuIcon.setAttribute('data-lucide', 'menu');
-                } else {
-                    mobileMenu.classList.remove('menu-hidden');
-                    mobileMenu.classList.add('menu-visible');
-                    menuIcon.setAttribute('data-lucide', 'x');
-                }
-                lucide.createIcons();
+            if (isNaN(area) || area <= 0) {
+                resultDisplay.innerText = `₹ 0.00`;
+                return;
             }
 
-            menuToggle.addEventListener('click', toggleMenu);
+            const total = rate * area;
+            // Format & Display
+            resultDisplay.innerText = `₹ ${total.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
 
-            // Close menu when a link is clicked
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('menu-visible');
-                    mobileMenu.classList.add('menu-hidden');
-                    menuIcon.setAttribute('data-lucide', 'menu');
-                    lucide.createIcons();
-                });
-            });
+            // Add a little visual "pop" effect
+            resultDisplay.classList.add('text-blue-400', 'scale-105');
+            setTimeout(() => {
+                resultDisplay.classList.remove('text-blue-400', 'scale-105');
+            }, 300);
+        }
 
-            // 2. Section Scroll Estimator Logic
-            function calculateEstimate() {
-                const select = document.getElementById('est-service');
-                const rate = parseFloat(select.options[select.selectedIndex].dataset.rate);
-                const areaInput = document.getElementById('est-area');
-                const area = parseFloat(areaInput.value);
-                const resultDisplay = document.getElementById('est-result');
-
-                if (isNaN(area) || area <= 0) {
-                    resultDisplay.innerText = `₹ 0.00`;
-                    return;
-                }
-
-                const total = rate * area;
-                // Format & Display
-                resultDisplay.innerText = `₹ ${total.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
-
-                // Add a little visual "pop" effect
-                resultDisplay.classList.add('text-blue-400', 'scale-105');
-                setTimeout(() => {
-                    resultDisplay.classList.remove('text-blue-400', 'scale-105');
-                }, 300);
+        // 3. Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 80) {
+                nav.classList.remove('py-4', 'lg:py-6', 'bg-transparent');
+                nav.classList.add('py-2', 'lg:py-3');
+            } else {
+                nav.classList.remove('py-2', 'lg:py-3');
+                nav.classList.add('py-4', 'lg:py-6', 'bg-transparent');
             }
-
-            // 3. Navbar Scroll Effect
-            window.addEventListener('scroll', () => {
-                const nav = document.getElementById('navbar');
-                if (window.scrollY > 80) {
-                    nav.classList.remove('py-4', 'lg:py-6', 'bg-transparent');
-                    nav.classList.add('py-2', 'lg:py-3');
-                } else {
-                    nav.classList.remove('py-2', 'lg:py-3');
-                    nav.classList.add('py-4', 'lg:py-6', 'bg-transparent');
-                }
-            });
-        </script>
+        });
+    </script>
 </body>
 
 </html>
-
-
-
-
-
-
-
