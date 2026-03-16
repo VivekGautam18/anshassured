@@ -297,7 +297,97 @@
     </section>
 
 
-    <section id="why-choose-us" class="py-32 px-6 bg-white relative overflow-hidden">
+   
+
+    <section id="estimate" class="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-slate-900 rounded-[3rem] overflow-hidden shadow-2xl">
+                <div class="grid lg:grid-cols-2">
+                    <div class="p-8 lg:p-16 space-y-8">
+                        <div>
+                            <h3 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">Project Estimator</h3>
+                            <p class="text-slate-400 font-medium">Get an instant ballpark figure for your infrastructure
+                                requirements.</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Select Surface
+                                    Type</label>
+                                <select id="est-service" onchange="calculateEstimate()"
+                                    class="w-full bg-slate-800 border-slate-700 text-white rounded-xl px-4 py-4 focus:ring-2 focus:ring-blue-500 transition-all outline-none">
+                                    <option value="turf" data-rate="290">Pickleball Court</option>
+                                    <option value="turf" data-rate="290">Football Turf</option>
+                                    <option value="turf" data-rate="290">Cricket Turf</option>
+                                    <option value="turf" data-rate="290">Multi Sports Turf</option>
+                                    <option value="turf" data-rate="290">Volleyball Court</option>
+                                    <option value="turf" data-rate="290">Badminton Court</option>
+                                    <option value="turf" data-rate="290">Tennis Court</option>
+                                    <option value="turf" data-rate="290">Basketball Court</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Estimated Area
+                                    (Sq. Ft.)</label>
+                                <div class="relative">
+                                    <input type="number" id="est-area" oninput="calculateEstimate()"
+                                        placeholder="e.g. 5000"
+                                        class="w-full bg-slate-800 border-slate-700 text-white rounded-xl px-4 py-4 focus:ring-2 focus:ring-blue-500 transition-all outline-none">
+                                    <span class="absolute right-4 top-4 text-slate-500 font-bold">sq.ft</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-slate-800">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Estimated
+                                Investment</div>
+                            <div id="est-result"
+                                class="text-4xl lg:text-5xl font-black text-white transition-all duration-300">₹ 0.00
+                            </div>
+                            <p class="text-[10px] text-slate-600 mt-4">*Note: Prices are indicative and may vary based
+                                on site preparation and location.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-600 p-8 lg:p-16 flex flex-col justify-center text-white">
+                        <i data-lucide="calculator" class="w-16 h-16 lg:w-20 lg:h-20 mb-8 opacity-40"></i>
+                        <h4 class="text-2xl lg:text-3xl font-extrabold mb-4">Need a Detailed Proposal?</h4>
+                        <p class="text-blue-100 font-medium mb-8">Our technical team provides customized BOQs and site
+                            assessment reports within 24 hours.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-2xl font-black hover:bg-blue-50 transition-all shadow-xl">
+                            Request Site Visit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section id="services" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                <div class="max-w-2xl">
+                    <span class="text-blue-600 font-black uppercase tracking-widest text-[11px] mb-4 block">Our Expertise</span>
+                    <h2 class="text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-none">
+                        Specialized <br>Infrastructural Vertical.
+                    </h2>
+                </div>
+                <p class="text-slate-500 max-w-xs text-sm font-medium leading-relaxed border-l-2 border-blue-600 pl-4">
+                    Customized engineering for diverse requirements—from residential safety to industrial hygiene.
+                </p>
+            </div>
+
+            <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+        </div>
+    </section>
+    <div id="serviceModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/90">
+        <div class="bg-slate-950 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] border border-slate-800 shadow-2xl">
+            <div id="modalContent" class="p-8 md:p-12 text-white">
+                </div>
+        </div>
+     <section id="why-choose-us" class="py-32 px-6 bg-white relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -393,72 +483,6 @@
                 <div class="text-center">
                     <p class="text-4xl font-black text-slate-900 mb-1">Guaranteed</p>
                     <p class="text-[10px] font-bold uppercase tracking-widest text-blue-600">50 Day Finish</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="estimate" class="py-20 lg:py-32 bg-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-slate-900 rounded-[3rem] overflow-hidden shadow-2xl">
-                <div class="grid lg:grid-cols-2">
-                    <div class="p-8 lg:p-16 space-y-8">
-                        <div>
-                            <h3 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">Project Estimator</h3>
-                            <p class="text-slate-400 font-medium">Get an instant ballpark figure for your infrastructure
-                                requirements.</p>
-                        </div>
-
-                        <div class="space-y-6">
-                            <div class="space-y-2">
-                                <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Select Surface
-                                    Type</label>
-                                <select id="est-service" onchange="calculateEstimate()"
-                                    class="w-full bg-slate-800 border-slate-700 text-white rounded-xl px-4 py-4 focus:ring-2 focus:ring-blue-500 transition-all outline-none">
-                                    <option value="turf" data-rate="290">Pickleball Court</option>
-                                    <option value="turf" data-rate="290">Football Turf</option>
-                                    <option value="turf" data-rate="290">Cricket Turf</option>
-                                    <option value="turf" data-rate="290">Multi Sports Turf</option>
-                                    <option value="turf" data-rate="290">Volleyball Court</option>
-                                    <option value="turf" data-rate="290">Badminton Court</option>
-                                    <option value="turf" data-rate="290">Tennis Court</option>
-                                    <option value="turf" data-rate="290">Basketball Court</option>
-                                </select>
-                            </div>
-
-                            <div class="space-y-2">
-                                <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Estimated Area
-                                    (Sq. Ft.)</label>
-                                <div class="relative">
-                                    <input type="number" id="est-area" oninput="calculateEstimate()"
-                                        placeholder="e.g. 5000"
-                                        class="w-full bg-slate-800 border-slate-700 text-white rounded-xl px-4 py-4 focus:ring-2 focus:ring-blue-500 transition-all outline-none">
-                                    <span class="absolute right-4 top-4 text-slate-500 font-bold">sq.ft</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pt-8 border-t border-slate-800">
-                            <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Estimated
-                                Investment</div>
-                            <div id="est-result"
-                                class="text-4xl lg:text-5xl font-black text-white transition-all duration-300">₹ 0.00
-                            </div>
-                            <p class="text-[10px] text-slate-600 mt-4">*Note: Prices are indicative and may vary based
-                                on site preparation and location.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-blue-600 p-8 lg:p-16 flex flex-col justify-center text-white">
-                        <i data-lucide="calculator" class="w-16 h-16 lg:w-20 lg:h-20 mb-8 opacity-40"></i>
-                        <h4 class="text-2xl lg:text-3xl font-extrabold mb-4">Need a Detailed Proposal?</h4>
-                        <p class="text-blue-100 font-medium mb-8">Our technical team provides customized BOQs and site
-                            assessment reports within 24 hours.</p>
-                        <a href="#contact"
-                            class="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-2xl font-black hover:bg-blue-50 transition-all shadow-xl">
-                            Request Site Visit
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -705,29 +729,7 @@
         </div>
     </section> -->
 
-    <section id="services" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-                <div class="max-w-2xl">
-                    <span class="text-blue-600 font-black uppercase tracking-widest text-[11px] mb-4 block">Our Expertise</span>
-                    <h2 class="text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-none">
-                        Specialized <br>Infrastructural Vertical.
-                    </h2>
-                </div>
-                <p class="text-slate-500 max-w-xs text-sm font-medium leading-relaxed border-l-2 border-blue-600 pl-4">
-                    Customized engineering for diverse requirements—from residential safety to industrial hygiene.
-                </p>
-            </div>
 
-            <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-        </div>
-    </section>
-    <div id="serviceModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/90">
-        <div class="bg-slate-950 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] border border-slate-800 shadow-2xl">
-            <div id="modalContent" class="p-8 md:p-12 text-white">
-                </div>
-        </div>
     </div>
        <section id="reviews" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
