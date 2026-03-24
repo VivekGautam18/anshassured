@@ -1,0 +1,18 @@
+# robots.txt for Assured Play Surfaces
+# https://assuredplaysurfaces.com
+
+# Allow all search engines to crawl the full site
+User-agent: *
+Allow: /
+
+# Block access to any admin or private folders (add more as needed)
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+# Block search engines from indexing the thank-you or form pages (optional)
+# Disallow: /thank-you.html
+
+# Sitemap location — tells Google exactly where to find your sitemap
+Sitemap: https://assuredplaysurfaces.com/sitemap.xml
