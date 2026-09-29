@@ -1499,36 +1499,45 @@ const services = [
         window.onload = renderCards;
         // Initialize Lucide Icons
         lucide.createIcons();
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbz_Qn12OApwpYSMcuUz8kjxImCRaEPcxBo0fWpCNx-308ChU59LRnfqqkiRpAAOeqGpug/exec'
+       const scriptURL = 'https://script.google.com/macros/s/AKfycbydWoDrRsic_sch9e8A1qc2Jn7T4646on7Vk3lxbHG1mP6bU-nghU5KzBOdPNhEO1jAmw/exec';
 
-        const form = document.getElementById('project-form')
-        const btn = form.querySelector('button')
+const form = document.getElementById('project-form');
+const btn = form.querySelector('button[type="submit"]');
 
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            btn.disabled = true
-            btn.innerText = 'Initializing...'
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.innerText = 'Initializing...';
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    btn.innerText = '✓ Project Initialized'
-                    btn.classList.replace('bg-blue-600', 'bg-green-600') // Turn green on success
-                    form.reset()
+    // Convert form data to URL-encoded format so Apps Script reads every field
+    const data = new URLSearchParams(new FormData(form));
 
-                    // Revert button after 3 seconds
-                    setTimeout(() => {
-                        btn.innerText = 'Initialize Project'
-                        btn.classList.replace('bg-green-600', 'bg-blue-600')
-                        btn.disabled = false
-                    }, 3000)
-                })
-                .catch(error => {
-                    alert('Error! Please check your connection.')
-                    btn.disabled = false
-                    btn.innerText = 'Initialize Project'
-                })
-        })
+    try {
+        const response = await fetch(scriptURL, {
+            method: 'POST',
+            body: data
+        });
+        const result = await response.json();
 
+        if (result.result !== 'success') throw new Error(result.message);
+
+        btn.innerText = '✓ Project Initialized';
+        btn.classList.replace('bg-blue-600', 'bg-green-600');
+        form.reset();
+    } catch (error) {
+        console.error(error);
+        alert('Error! Please check your connection and try again.');
+        btn.innerText = 'Initialize Project';
+        btn.disabled = false;
+        return;
+    }
+
+    setTimeout(() => {
+        btn.innerText = 'Initialize Project';
+        btn.classList.replace('bg-green-600', 'bg-blue-600');
+        btn.disabled = false;
+    }, 3000);
+});
         // 1. Mobile Menu Toggle Logic
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
