@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18396207911"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-18396207911');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Materials & Products Catalog | Assured Play Surfaces</title>
+    <link rel="icon" type="image/png" href="Assured Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .hero-mesh {
+            background-color: #0f172a;
+            background-image: radial-gradient(at 0% 0%, hsla(217, 100%, 13%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(215, 96%, 10%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(220, 100%, 20%, 1) 0, transparent 50%);
+        }
+
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .menu-hidden {
+            transform: translateY(-20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
+        }
+
+        .menu-visible {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
+        }
+
+        .max-w-7xl {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation Header -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 lg:py-6 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex justify-between items-center bg-white/90 backdrop-blur-md rounded-2xl px-4 lg:px-8 py-3 lg:py-4 shadow-sm border border-slate-100">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <img src="Assured Logo.png" alt="assured logo" class="w-10 h-10 lg:w-14 lg:h-14 object-contain">
+                    </div>
+                    <div>
+                        <span class="text-lg lg:text-xl font-extrabold tracking-tight text-slate-900">ASSURED</span>
+                        <span class="block text-[10px] uppercase tracking-[0.2em] font-bold text-blue-600 -mt-1">Play
+                            Surfaces</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#hero"
+                        class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="index.html#services"
+                        class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="project.html"
+                        class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="product.html" class="text-sm font-bold text-blue-600">Products & Materials</a>
+                    <a href="index.html#estimate"
+                        class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Calculator</a>
+                    <a href="index.html#contact"
+                        class="bg-blue-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">Get
+                        Quote</a>
+                </div>
+
+                <button id="menu-toggle"
+                    class="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="md:hidden absolute top-20 left-4 right-4 bg-white rounded-2xl shadow-xl border border-slate-100 p-6 menu-hidden z-40">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html#hero"
+                    class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Home</a>
+                <a href="index.html#services"
+                    class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Services</a>
+                <a href="project.html"
+                    class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Projects</a>
+                <a href="product.html"
+                    class="mobile-link text-base font-bold text-blue-600 p-2 bg-blue-50 rounded-lg">Products &
+                    Materials</a>
+                <a href="index.html#estimate"
+                    class="mobile-link text-base font-semibold text-slate-700 p-2 hover:bg-blue-50 rounded-lg">Calculator</a>
+                <a href="index.html#contact"
+                    class="mobile-link bg-blue-600 text-white px-5 py-3 rounded-xl text-center font-bold shadow-lg shadow-blue-200">Get
+                    Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="relative pt-44 pb-20 hero-mesh border-b border-white/10 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div
+                class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-[100px]">
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <span class="text-blue-400 font-black uppercase tracking-[0.3em] text-xs mb-4 block">Premium Infrastructure
+                Stock</span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-6">
+                Our Certified <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">Materials
+                    Catalog</span>
+            </h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg font-medium leading-relaxed">
+                Explore our high-grade artificial turfs, Garware safety nets, structural poles, and specialized indoor
+                sports flooring.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Bar / Categories -->
+    <section class="py-10 bg-slate-900 border-b border-slate-800 sticky top-20 z-40 backdrop-blur-md bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button onclick="filterProducts('all')"
+                    class="filter-btn px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider bg-blue-600 text-white shadow-lg shadow-blue-600/30 transition-all">All
+                    Materials</button>
+                <button onclick="filterProducts('grass')"
+                    class="filter-btn px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">Artificial
+                    Turf & Grass</button>
+                <button onclick="filterProducts('net')"
+                    class="filter-btn px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">Garware
+                    Nets</button>
+                <button onclick="filterProducts('flooring')"
+                    class="filter-btn px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">Badminton
+                    Flooring</button>
+                <button onclick="filterProducts('structure')"
+                    class="filter-btn px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">Poles
+                    & Structure</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950">
+        <div class="max-w-7xl mx-auto">
+            <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamically injected through script -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal"
+        class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md">
+        <div
+            class="bg-slate-900 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] border border-slate-800 shadow-2xl relative p-8 md:p-12 text-white">
+            <button onclick="closeProductModal()"
+                class="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="bg-slate-900 py-12 lg:py-20 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <div class="flex items-center">
+                                <img src="Assured Logo.png" alt="assured logo"
+                                    class="w-10 h-10 lg:w-14 lg:h-14 object-contain">
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold tracking-tight">ASSURED</span>
+                            <span
+                                class="block text-[10px] uppercase tracking-[0.2em] font-bold text-blue-400 -mt-1">Play
+                                Surfaces</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">Pioneering premium infrastructure solutions
+                        with a focus on durability, safety, and athlete performance.</p>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-lg mb-6">Quick Links</h5>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li><a href="#why-choose-us" class="hover:text-blue-400 transition-colors">Why us?</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors">Services</a></li>
+                        <li><a href="#estimate" class="hover:text-blue-400 transition-colors">Project Calculator</a>
+                        </li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Safety Certifications</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-lg mb-6">Services</h5>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li><a href="#athletic-tracks" class="hover:text-blue-400 transition-colors">Pickle Ball
+                                Courts</a></li>
+                        <li><a href="#epdm-wetpour" class="hover:text-blue-400 transition-colors">Football turfs</a>
+                        </li>
+                        <li><a href="#synthetic-turf" class="hover:text-blue-400 transition-colors">Cricket Turf</a>
+                        </li>
+                        <li><a href="#tennis-court-surfacing" class="hover:text-blue-400 transition-colors">Tennis
+                                Court Surfacing</a></li>
+                        <li><a href="#industrial-epoxy" class="hover:text-blue-400 transition-colors">Badminton
+                                Court</a></li>
+                        <li><a href="#volleyball" class="hover:text-blue-400 transition-colors">Volleyball
+                                Court</a></li>
+                        <li><a href="#epdm-wetpour" class="hover:text-blue-400 transition-colors">Basketball
+                                Court</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-lg mb-6">Newsletter</h5>
+                    <p class="text-slate-400 text-sm mb-4">Stay updated with our latest projects and tech tips.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email"
+                            class="bg-slate-800 border-none rounded-l-xl px-4 py-3 text-sm outline-none w-full">
+                        <button class="bg-blue-600 px-4 rounded-r-xl hover:bg-blue-700 transition-colors">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-slate-500 text-xs font-bold uppercase tracking-widest">
+                <div>© 2026 Assured Play Surfaces India Pvt Ltd.</div>
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                id: "grass-50mm-12k",
+                category: "grass",
+                name: "50mm Artificial Turf (12,000 DTEX)",
+                tag: "FIFA Standard Pro",
+                image: "images/capture.PNG",
+                desc: "Robust monofilament 50mm artificial grass with 12,000 DTEX fiber weight, designed for heavy football and box cricket usage.",
+                specs: ["Pile Height: 50mm", "DTEX: 12,000", "Infill: Rubber / SBR & Silica Sand", "Warranty: 8 Years Outdoor"],
+                application: "Professional football turfs and large box cricket arenas."
+            },
+            {
+                id: "grass-50mm-14k",
+                category: "grass",
+                name: "50mm Artificial Turf (14,000 DTEX)",
+                tag: "High Density Grade",
+                image: "images/1400dtex.png",
+                desc: "Higher stitch density 50mm turf engineered with 14,000 DTEX for enhanced durability and superior blade recovery.",
+                specs: ["Pile Height: 50mm", "DTEX: 14,000", "Backing: Triple UV-Coated Layer", "Resilience: High memory monofilament"],
+                application: "Commercial turf arenas and sports academies."
+            },
+            {
+                id: "grass-50mm-16k",
+                category: "grass",
+                name: "50mm Artificial Turf (16,000 DTEX)",
+                tag: "Heavy Commercial Pro",
+                image: "images/16000.PNG",
+                desc: "Ultra-heavy duty 16,000 DTEX 50mm turf built for high-traffic sports facilities that experience rigorous daily matches.",
+                specs: ["Pile Height: 50mm", "DTEX: 16,000", "Stitch Rate: Premium density", "Weather Rating: All-season waterproof"],
+                application: "Commercial sports complexes and high-use turf venues."
+            },
+            {
+                id: "grass-50mm-20k",
+                category: "grass",
+                name: "50mm Artificial Turf (20,000 DTEX)",
+                tag: "Elite Championship Grade",
+                image: "images/20000.PNG",
+                desc: "Our thickest and most durable 20,000 DTEX turf configuration, delivering maximum resilience and professional tactile feedback.",
+                specs: ["Pile Height: 50mm", "DTEX: 20,000", "Durability: Maximum tear strength", "Certification: FIFA Quality Pro compatible"],
+                application: "Premium turf stadiums, multi-sport professional turfs."
+            },
+            {
+                id: "grass-15mm-pitch",
+                category: "grass",
+                name: "15mm Cricket Pitch Turf",
+                tag: "Professional Pitch Mat",
+                image: "images/15mmnew.PNG",
+                desc: "Specialized short-pile 15mm dense turf engineered specifically for cricket wicket pitches ensuring true seam movement and dependable bounce.",
+                specs: ["Pile Height: 15mm", "Density: High stitch count", "Base: Perforated latex backing", "Usage: Cricket wickets and training nets"],
+                application: "Indoor and outdoor cricket practice pitch strips."
+            },
+            {
+                id: "grass-30mm-noninfil",
+                category: "grass",
+                name: "30mm Non-Infil Cricket Turf",
+                tag: "Zero Infill Maintenance",
+                image: "images/30mmnon.PNG",
+                desc: "Premium 30mm non-infil cricket turf requiring zero rubber granule infill. Easy to maintain, clean look, and exceptional durability.",
+                specs: ["Pile Height: 30mm", "Infill: Zero infill required", "Maintenance: Low upkeep", "Application: Cricket batting tunnels"],
+                application: "Cricket practice cages, backyard pitches, and multi-play zones."
+            },
+            {
+                id: "grass-10mm-pitch",
+                category: "grass",
+                name: "10mm Cricket & Tennis Pitch Turf",
+                tag: "Multi-Sport Surface",
+                image: "images/10mm new.PNG",
+                desc: "Compact 10mm multi-purpose turf tailored for fast action sports including tennis training and practice cricket strips.",
+                specs: ["Pile Height: 10mm", "Surface: Tight flat-weave turf", "Durability: High abrasion resistance", "Weather Proof: UV Protected"],
+                application: "Tennis practice areas, training cricket strips, and recreational zones."
+            },
+            {
+                id: "badminton-gem",
+                category: "flooring",
+                name: "Gem Pattern PVC Badminton Flooring",
+                tag: "Elite Tournament Grade",
+                image: "images/gem.png",
+                desc: "Professional multi-layer PVC sports flooring featuring an exquisite gem pattern surface texture, engineered to minimize knee impact and prevent slipping.",
+                specs: ["Thickness: 4.5mm / 5.5mm / 6.00mm / 8.00mm", "Embossing: Gem pattern texture", "Shock Absorption: Superior impact reduction", "Standard: BWF Approved"],
+                application: "Professional tournament badminton arenas and sports academies."
+            },
+            {
+                id: "badminton-sand",
+                category: "flooring",
+                name: "Sand Pattern PVC Badminton Flooring",
+                tag: "Anti-Skid Traction BWF approved",
+                image: "images/sand.png",
+                desc: "Specialized PVC vinyl sports flooring featuring an anti-skid sand grain embossed texture for optimal traction during rapid footwork.",
+                specs: ["Thickness: 5.00mm / 5.5mm / 7.2mm", "Embossing: Sand pattern matte finish", "Shock Absorption: Point-elastic rating >35%", "Standard: Indoor sports grade"],
+                application: "Indoor badminton halls and multi-sport training centers."
+            },
+            {
+                id: "garware-2-5mm",
+                category: "net",
+                name: "Garware 2.5 mm Safety & Cricket Net",
+                tag: "Industrial Strength",
+                image: "images/2.5net.png",
+                desc: "Genuine Garware 2.5 mm UV-stabilized virgin HDPE netting designed for rigorous box cricket perimeters and heavy ball containment.",
+                specs: ["Twine Thickness: 2.5 mm", "Material: Virgin HDPE with UV Stabilizers", "Mesh Type: Knotless high tenacity", "Lifespan: 6–8 years outdoor"],
+                application: "Box cricket perimeters, high-altitude safety protection, sports enclosures."
+            },
+            {
+                id: "garware-1-5mm",
+                category: "net",
+                name: "Garware 1.5 mm Safety & Practice Net",
+                tag: "Standard Protection",
+                image: "images/1.5net.png",
+                desc: "High-tenacity 1.5 mm Garware netting offering exceptional tensile strength and clean aesthetics for practice partitions and safety barriers.",
+                specs: ["Twine Thickness: 1.5 mm", "Material: High-density polyethylene", "UV Resistance: Weather-proofed", "Color Options: Black, Green, White"],
+                application: "Partition practice nets, balcony safety, and spectator protection."
+            },
+            {
+                id: "poles-structure",
+                category: "structure",
+                name: "Heavy Structural Steel Poles & Framing",
+                tag: "Apollo & Tata Grade",
+                image: "images/pole.png",
+                desc: "High-tensile structural steel tubes and upright poles powered by Apollo & Tata steel, anti-rust coated for box cricket and canopy frameworks.",
+                specs: ["Material: Galvanized / ERW Structural Steel", "Thickness: 2mm to 6mm custom gauge", "Coating: Anti-rust primer coated", "Standards: IS 1161 / IS 1239 certified"],
+                application: "Box cricket pole columns, net support structures, canopy lighting masts."
+            }
+        ];
+
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('products-grid');
+            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+
+            grid.innerHTML = filtered.map(p => `
+                <div onclick="openProductModal('${p.id}')" class="product-card group bg-slate-900 border border-slate-800 rounded-[2.5rem] overflow-hidden flex flex-col cursor-pointer hover:border-blue-500/50 shadow-xl">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="${p.image}" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="${p.name}">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-blue-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-xl shadow-lg">
+                                ${p.tag}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-xl font-extrabold text-white mb-3 group-hover:text-blue-400 transition-colors">${p.name}</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-1">${p.desc}</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">View Specifications</span>
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function filterProducts(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.replace('bg-blue-600', 'bg-slate-800');
+                btn.classList.replace('text-white', 'text-slate-300');
+                btn.classList.remove('shadow-lg', 'shadow-blue-600/30');
+            });
+            event.target.classList.replace('bg-slate-800', 'bg-blue-600');
+            event.target.classList.replace('text-slate-300', 'text-white');
+            event.target.classList.add('shadow-lg', 'shadow-blue-600/30');
+            renderProducts(category);
+        }
+
+        function openProductModal(id) {
+            const p = products.find(item => item.id === id);
+            const modal = document.getElementById('productModal');
+            const body = document.getElementById('modal-body');
+
+            body.innerHTML = `
+                <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                    <div class="rounded-2xl overflow-hidden h-64 border border-slate-800">
+                        <img src="${p.image}" class="w-full h-full object-cover" alt="${p.name}">
+                    </div>
+                    <div>
+                        <span class="text-blue-400 text-xs font-black uppercase tracking-widest mb-2 block">${p.tag}</span>
+                        <h2 class="text-2xl md:text-3xl font-black mb-4">${p.name}</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">${p.desc}</p>
+                        <p class="text-xs text-slate-400 font-semibold"><strong class="text-white">Ideal For:</strong> ${p.application}</p>
+                    </div>
+                </div>
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 mb-8">
+                    <h3 class="text-white font-bold mb-4 flex items-center gap-2 text-sm uppercase tracking-wider">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-blue-500"></i> Technical Specifications
+                    </h3>
+                    <div class="grid sm:grid-cols-2 gap-3">
+                        ${p.specs.map(spec => `
+                            <div class="flex items-center gap-2 text-slate-300 text-xs font-medium">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-blue-500 flex-shrink-0"></i>
+                                ${spec}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="index.html#contact" onclick="closeProductModal()" class="flex-1 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black text-center text-xs uppercase tracking-widest rounded-2xl shadow-lg transition-all">
+                        Inquire About Material
+                    </a>
+                    <button onclick="closeProductModal()" class="px-6 py-4 bg-slate-800 hover:bg-slate-700 text-white font-black text-xs uppercase tracking-widest rounded-2xl transition-all">
+                        Close
+                    </button>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closeProductModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        document.getElementById('productModal').addEventListener('click', function (e) {
+            if (e.target === this) closeProductModal();
+        });
+
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('menu-visible');
+            if (isOpen) {
+                mobileMenu.classList.replace('menu-visible', 'menu-hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            } else {
+                mobileMenu.classList.replace('menu-hidden', 'menu-visible');
+                menuIcon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        });
+
+        window.onload = () => {
+            renderProducts('all');
+        };
+    </script>
+</body>
+
+</html>
