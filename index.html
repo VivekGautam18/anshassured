@@ -10,6 +10,7 @@
         gtag('js', new Date());
 
         gtag('config', 'AW-18396207911');
+        gtag('config', 'AW-18230308903');
     </script>
     <!-- Event snippet for Purchase conversion page -->
     <script>
@@ -1558,6 +1559,12 @@
                 const result = await response.json();
 
                 if (result.result !== 'success') throw new Error(result.message);
+
+                // Google Ads conversion (new account) - fires only after form is saved
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-18230308903/D0fXCO2AnaQdEKfg8fRD',
+                    'transaction_id': 'lead-' + Date.now()
+                });
 
                 btn.innerText = '✓ Project Initialized';
                 btn.classList.replace('bg-blue-600', 'bg-green-600');
